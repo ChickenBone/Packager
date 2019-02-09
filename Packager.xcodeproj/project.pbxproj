@@ -13,6 +13,7 @@
 		E119B515220EEB290088841D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E119B514220EEB290088841D /* Assets.xcassets */; };
 		E119B518220EEB290088841D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E119B516220EEB290088841D /* LaunchScreen.storyboard */; };
 		E1AE7286220F2F0200D8CD96 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AE7285220F2F0200D8CD96 /* HomeViewController.swift */; };
+		E1AE7288220F704300D8CD96 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AE7287220F704300D8CD96 /* Downloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E119B517220EEB290088841D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E119B519220EEB290088841D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1AE7285220F2F0200D8CD96 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E1AE7287220F704300D8CD96 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		E1CD867C220EF6630067F263 /* Packager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Packager.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +67,7 @@
 				E119B514220EEB290088841D /* Assets.xcassets */,
 				E119B516220EEB290088841D /* LaunchScreen.storyboard */,
 				E119B519220EEB290088841D /* Info.plist */,
+				E1AE7287220F704300D8CD96 /* Downloader.swift */,
 			);
 			path = Packager;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			files = (
 				E119B510220EEB270088841D /* TweaksViewController.swift in Sources */,
 				E119B50C220EEB270088841D /* AppDelegate.swift in Sources */,
+				E1AE7288220F704300D8CD96 /* Downloader.swift in Sources */,
 				E1AE7286220F2F0200D8CD96 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

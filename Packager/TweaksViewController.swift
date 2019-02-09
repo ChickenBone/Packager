@@ -23,7 +23,15 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
     }
     
     @IBAction func startDownload(_ sender: Any) {
-        let url = textField.text! as NSString
+        let fm = FileManager.default
+        let url = textField.text ?? ""
+        let downloadPath = "/var/containers/Bundle/tweaksupport/Library/MobileSubstrate/DynamicLibraries/packagertemp"
+    
+        if(url != "") {
+            Downloader.load(url: URL(string: url)!, to: URL(string: downloadPath)!) {
+                print("File downloaded!")
+            }
+        }
     }
 }
 
