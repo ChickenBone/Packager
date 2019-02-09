@@ -8,11 +8,22 @@
 
 import UIKit
 
-class TweaksViewController: UIViewController {
-
+class TweaksViewController: UITableViewController, UITextFieldDelegate {
+    
+    @IBOutlet weak var textField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.textField.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    @IBAction func startDownload(_ sender: Any) {
+        let url = textField.text! as NSString
     }
 }
 
