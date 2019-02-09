@@ -1,0 +1,20 @@
+PODS:
+  - SwiftSH (0.1.2):
+    - SwiftSH/Libssh2 (= 0.1.2)
+  - SwiftSH/Core (0.1.2)
+  - SwiftSH/Libssh2 (0.1.2):
+    - SwiftSH/Core
+
+DEPENDENCIES:
+  - SwiftSH
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SwiftSH
+
+SPEC CHECKSUMS:
+  SwiftSH: 5d3c95b23093106d18c527ce9c175a5733e3e86e
+
+PODFILE CHECKSUM: 3aa3bbe073efabb823462295de50eea60e861d90
+
+COCOAPODS: 1.6.0
