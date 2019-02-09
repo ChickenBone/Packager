@@ -10,6 +10,10 @@ import UIKit
 
 class HomeViewController: UITableViewController {
     
+    func isJailbroken() -> Bool {
+        return FileManager.default.isWritableFile(atPath: "/var/containers/Bundle/tweaksupport/Library/MobileSubstrate/DynamicLibraries")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -20,7 +24,7 @@ class HomeViewController: UITableViewController {
 
             let okAction = UIAlertAction(title: "Check Again", style: UIAlertAction.Style.default) {
                 UIAlertAction in
-                self.viewDidLoad()
+                self.viewDidAppear(animated)
             }
             let cancelAction = UIAlertAction(title: "Close App", style: UIAlertAction.Style.cancel) {
                 UIAlertAction in
@@ -33,9 +37,5 @@ class HomeViewController: UITableViewController {
         } else {
             super.viewDidAppear(animated)
         }
-    }
-    
-    func isJailbroken() -> Bool {
-        return FileManager.default.isWritableFile(atPath: "/var/containers/Bundle/tweaksupport/Library/MobileSubstrate/DynamicLibraries")
     }
 }
