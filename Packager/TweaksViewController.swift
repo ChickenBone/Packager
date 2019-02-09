@@ -25,10 +25,15 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
     @IBAction func startDownload(_ sender: Any) {
         let fm = FileManager.default
         let url = textField.text ?? ""
-        let downloadPath = "/var/containers/Bundle/tweaksupport/Library/MobileSubstrate/DynamicLibraries/packagertemp"
+        let downloadPath = "/var/containers/Bundle/tweaksupport/Library/packagertemp/1.zip"
     
         if(url != "") {
-            Downloader.load(url: URL(string: url)!, to: URL(string: downloadPath)!) {
+            do {
+                try fm.createDirectory(at: URL(fileURLWithPath: "/var/containers/Bundle/tweaksupport/Library/packagertemp/", isDirectory: true), withIntermediateDirectories: false, attributes: nil)
+            } catch let error {
+                print(error)
+            }
+            Downloader.load(url: URL(string: url)!, to: URL(fileURLWithPath: downloadPath)) {
                 print("File downloaded!")
             }
         }
