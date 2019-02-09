@@ -40,6 +40,6 @@ class HomeViewController: UITableViewController {
     }
     
     func isJailbroken() -> Bool {
-        return FileManager.default.fileExists(atPath: "/var/LIB/TweakSupport/DynamicLibraries")
+        return FileManager.default.fileExists(atPath: "/var/containers/Bundle/tweaksupport/Library/MobileSubstrate/DynamicLibraries")
     }
 }
