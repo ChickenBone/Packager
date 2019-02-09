@@ -20,11 +20,7 @@ class HomeViewController: UITableViewController {
 
             let okAction = UIAlertAction(title: "Check Again", style: UIAlertAction.Style.default) {
                 UIAlertAction in
-                if(self.isJailbroken()) {
-                    alert.dismiss(animated: true, completion: nil)
-                } else {
-                    super.viewDidAppear(animated)
-                }
+                self.viewDidLoad()
             }
             let cancelAction = UIAlertAction(title: "Close App", style: UIAlertAction.Style.cancel) {
                 UIAlertAction in
@@ -40,6 +36,6 @@ class HomeViewController: UITableViewController {
     }
     
     func isJailbroken() -> Bool {
-        return FileManager.default.fileExists(atPath: "/var/containers/Bundle/tweaksupport/Library/MobileSubstrate/DynamicLibraries")
+        return FileManager.default.isWritableFile(atPath: "/var/containers/Bundle/tweaksupport/Library/MobileSubstrate/DynamicLibraries")
     }
 }
