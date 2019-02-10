@@ -1,0 +1,16 @@
+PODS:
+  - ZIPFoundation (0.9.8)
+
+DEPENDENCIES:
+  - ZIPFoundation (~> 0.9)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ZIPFoundation
+
+SPEC CHECKSUMS:
+  ZIPFoundation: b1f07e4409baf1641f3fe5948b2a1c3f5c500cb1
+
+PODFILE CHECKSUM: e6e73f731809c1fcc778d615f6a648c9a7bbcd71
+
+COCOAPODS: 1.6.0
