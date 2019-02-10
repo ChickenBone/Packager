@@ -129,26 +129,38 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wk7-ed-bsw">
-                                    <rect key="frame" x="115" y="77" width="142" height="30"/>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wk7-ed-bsw">
+                                    <rect key="frame" x="27" y="77" width="318" height="30"/>
+                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Download and Install"/>
                                     <connections>
                                         <action selector="startDownload:" destination="NPQ-ga-Y5f" eventType="touchUpInside" id="sSY-cs-3H2"/>
                                     </connections>
                                 </button>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Log output." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qoE-al-LIB">
+                                    <rect key="frame" x="30" y="117" width="315" height="377"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
                             </subviews>
                             <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
+                                <constraint firstItem="qoE-al-LIB" firstAttribute="top" secondItem="Wk7-ed-bsw" secondAttribute="bottom" constant="10" id="0JO-Ol-7T9"/>
                                 <constraint firstItem="jem-qo-U8D" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="c5U-4T-Ztt" secondAttribute="leading" constant="20" symbolic="YES" id="EV8-RZ-fYq"/>
                                 <constraint firstAttribute="trailing" secondItem="wdB-kD-oSX" secondAttribute="trailing" constant="10" id="HaC-B0-j5G"/>
                                 <constraint firstItem="wdB-kD-oSX" firstAttribute="leading" secondItem="c5U-4T-Ztt" secondAttribute="leading" constant="8" id="NqC-Hf-SWX"/>
                                 <constraint firstItem="Wk7-ed-bsw" firstAttribute="top" secondItem="wdB-kD-oSX" secondAttribute="bottom" constant="8" id="PMJ-0v-TDV"/>
                                 <constraint firstAttribute="trailing" secondItem="jem-qo-U8D" secondAttribute="trailing" constant="30" id="Vcw-Vl-smy"/>
+                                <constraint firstAttribute="bottom" secondItem="qoE-al-LIB" secondAttribute="bottom" constant="10" id="ZQm-JI-1AL"/>
+                                <constraint firstAttribute="trailing" secondItem="qoE-al-LIB" secondAttribute="trailing" constant="30" id="bR9-dZ-2d3"/>
                                 <constraint firstItem="jem-qo-U8D" firstAttribute="top" secondItem="c5U-4T-Ztt" secondAttribute="top" constant="8" id="gZG-xL-X6y"/>
                                 <constraint firstItem="Wk7-ed-bsw" firstAttribute="leading" secondItem="c5U-4T-Ztt" secondAttribute="leading" constant="115" id="i7A-6U-2Y4"/>
                                 <constraint firstItem="wdB-kD-oSX" firstAttribute="top" secondItem="jem-qo-U8D" secondAttribute="bottom" constant="10" id="ivS-dK-pVK"/>
                                 <constraint firstItem="Wk7-ed-bsw" firstAttribute="top" secondItem="wdB-kD-oSX" secondAttribute="bottom" constant="8" id="jDi-us-795"/>
                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Wk7-ed-bsw" secondAttribute="trailing" constant="20" symbolic="YES" id="rAR-GW-EgX"/>
+                                <constraint firstItem="qoE-al-LIB" firstAttribute="leading" secondItem="c5U-4T-Ztt" secondAttribute="leading" constant="30" id="wg7-PG-MS8"/>
                                 <constraint firstItem="wdB-kD-oSX" firstAttribute="top" secondItem="jem-qo-U8D" secondAttribute="bottom" constant="10" id="yVs-cu-tcy"/>
                             </constraints>
                         </view>
@@ -159,6 +171,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Install" id="x0f-D4-er0"/>
                     <connections>
+                        <outlet property="downloadButton" destination="Wk7-ed-bsw" id="odb-vh-5j4"/>
+                        <outlet property="outputLog" destination="qoE-al-LIB" id="ifn-HO-RYA"/>
                         <outlet property="textField" destination="wdB-kD-oSX" id="ce3-bX-kSI"/>
                     </connections>
                 </tableViewController>
