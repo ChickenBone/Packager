@@ -29,7 +29,7 @@ class Downloader {
                 }
                 
             } else {
-                print("Failure: %@", error?.localizedDescription);
+                print("Failure: %@", error?.localizedDescription ?? "Unknown Error");
             }
         }
         task.resume()

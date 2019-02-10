@@ -31,6 +31,7 @@
 		E1AE7285220F2F0200D8CD96 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E1AE7287220F704300D8CD96 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		E1CD867C220EF6630067F263 /* Packager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Packager.entitlements; sourceTree = "<group>"; };
+		E1E1F7B2221020D90012ED6D /* NSTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSTask.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +60,6 @@
 				80F7864D48002682563CD327 /* Pods-Packager.debug.xcconfig */,
 				744931D0BD6E72B2E06FD40F /* Pods-Packager.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -93,6 +93,7 @@
 				E119B516220EEB290088841D /* LaunchScreen.storyboard */,
 				E119B519220EEB290088841D /* Info.plist */,
 				E1AE7287220F704300D8CD96 /* Downloader.swift */,
+				E1E1F7B2221020D90012ED6D /* NSTask.h */,
 			);
 			path = Packager;
 			sourceTree = "<group>";
@@ -387,7 +388,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = club.conorthedev.Packager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = Packager/NSTask.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -413,7 +414,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = club.conorthedev.Packager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = Packager/NSTask.h;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

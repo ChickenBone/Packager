@@ -37,12 +37,45 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
         self.present(alert2, animated: true, completion: nil)
     }
     
+    func showInstallError(error: String) {
+        let alert2 = UIAlertController(title: "Packager Error", message: "There was an issue installing your tweak. Contact @ConorTheDev on Twitter. Error:\n" + error, preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+            UIAlertAction in
+            alert2.dismiss(animated: true, completion: nil)
+        }
+        
+        alert2.addAction(action)
+        
+        self.present(alert2, animated: true, completion: nil)
+    }
+    
+    func showSuccessMessage() {
+        let alert2 = UIAlertController(title: "Packager", message: "Your tweak was installed! Respring?", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Respring!", style: UIAlertAction.Style.default) {
+            UIAlertAction in
+            
+            let kilallSB = "killall SpringBoard"
+            
+            print(kilallSB.run()!)
+        }
+        
+        let action2 = UIAlertAction(title: "Don't respring yet.", style: UIAlertAction.Style.default) {
+            UIAlertAction in
+            alert2.dismiss(animated: false, completion: nil)
+        }
+        
+        alert2.addAction(action)
+        alert2.addAction(action2)
+        
+        self.present(alert2, animated: true, completion: nil)
+    }
+    
     @IBAction func startDownload(_ sender: Any) {
         let fm = FileManager.default
         let url = textField.text ?? ""
         let downloadPath = "/var/containers/Bundle/tweaksupport/Library/packagertemp/1.zip"
-        let injectShPath = "/var/containers/Bundle/tweaksupport/Library/Packager/inject.sh"
-        let scriptDownloadURL = URL(string: "https://conorthedev.club/apps/Packager/inject.sh")
     
         if(url != "") {
             do {
@@ -67,6 +100,118 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
                             if(fm.fileExists(atPath: "/var/containers/Bundle/tweaksupport/Library/packagertemp/1/Library")) {
                                 
                                 print("Library Exists! Doing lib method!")
+                                
+                                var DynamicLibs = [URL(string: "")]
+                                
+                                let mobileSubstrateDynamicLibs = try fm.contentsOfDirectory(at: URL(fileURLWithPath: "/var/containers/Bundle/tweaksupport/Library/packagertemp/1/Library/MobileSubstrate/DynamicLibraries"), includingPropertiesForKeys: nil, options: FileManager.DirectoryEnumerationOptions.skipsHiddenFiles)
+                                
+                                for file in mobileSubstrateDynamicLibs {
+                                    DynamicLibs.removeFirst()
+                                    DynamicLibs.append(file.absoluteURL)
+                                }
+                                
+                                for file in DynamicLibs {
+                                    print("Found files in Mobile Substrate:", file!)
+                                }
+                                
+                                var PreferenceFiles = [URL(string: "")]
+                                
+                                let preferenceLoaderFiles = try fm.contentsOfDirectory(at: URL(fileURLWithPath: "/var/containers/Bundle/tweaksupport/Library/packagertemp/1/Library/PreferenceLoader/Preferences"), includingPropertiesForKeys: nil, options: FileManager.DirectoryEnumerationOptions.skipsHiddenFiles)
+                                
+                                PreferenceFiles.removeFirst()
+                                
+                                for file in preferenceLoaderFiles {
+                                    if(file.absoluteString.hasSuffix(".bundle")) {
+                                        PreferenceFiles.append(file.absoluteURL)
+                                    }
+                                }
+                                
+                                for file in preferenceLoaderFiles {
+                                    print("Found files in PreferenceLoader:", file)
+                                }
+                                
+                                let preferenceBundleFiles = try fm.contentsOfDirectory(at: URL(fileURLWithPath: "/var/containers/Bundle/tweaksupport/Library/packagertemp/1/Library/PreferenceBundles/"), includingPropertiesForKeys: nil, options: FileManager.DirectoryEnumerationOptions.skipsHiddenFiles)
+                                
+                                for file in preferenceBundleFiles {
+                                    DynamicLibs.removeFirst()
+                                    DynamicLibs.append(file.absoluteURL)
+                                }
+                                
+                                for file in DynamicLibs {
+                                    print("Found files in Mobile Substrate:", file!)
+                                }
+                                
+                                print("Found required files, moving files...")
+                                
+                                for url in mobileSubstrateDynamicLibs {
+                                    let path = URL(fileURLWithPath: "/var/containers/Bundle/tweaksupport/Library/MobileSubstrate/DynamicLibraries/" + url.lastPathComponent)
+                                    
+                                    print("File URL:", url)
+                                    print("Destination URL:", path)
+                                    
+                                   try fm.moveItem(at: url, to: path)
+                                }
+                                
+                                print("Moved mobileSubstrateDynamicLibs...")
+                                
+                                for url in preferenceLoaderFiles {
+                                    let path = URL(fileURLWithPath: "/var/containers/Bundle/tweaksupport/Library/PreferenceLoader/Preferences/" + url.lastPathComponent)
+                                    
+                                    print("File URL:", url)
+                                    print("Destination URL:", path)
+                                    
+                                    try fm.moveItem(at: url, to: path)
+                                }
+                                
+                                print("Moved preferenceLoaderFiles...")
+                                
+                                for url in preferenceBundleFiles {
+                                    let path = URL(fileURLWithPath: "/var/containers/Bundle/tweaksupport/Library/PreferenceBundles/" + url.lastPathComponent)
+                                    
+                                    print("File URL:", url)
+                                    print("Destination URL:", path)
+                                    
+                                    try fm.moveItem(at: url, to: path)
+                                }
+                                
+                                let preferenceBundle = preferenceBundleFiles[0].absoluteURL
+                                let tweakDylib = mobileSubstrateDynamicLibs[0].absoluteURL
+
+                                if(tweakDylib != URL(string: "") && preferenceBundle != URL(string: "")) {
+                                    print("Moved all files... INJECTING!")
+                                    
+                                    print("Injecting TweakDylib...")
+                                    
+                                    let command = "inject " + (tweakDylib.absoluteURL.absoluteString)
+                                    
+                                    if(command == "inject ") {
+                                        self.showInstallError(error: "Inject command is empty!")
+                                    } else {
+                                        print(command.run()!)
+                                    }
+                                    
+                                    print("Injected TweakDylib!")
+                                    
+                                    print("Injecting PreferenceBundle...")
+                                    
+                                    let command2 = "inject " + (preferenceBundle.absoluteURL.absoluteString)
+                                    
+                                    if(command2 == "inject ") {
+                                        self.showInstallError(error: "Inject2 command is empty!")
+                                    } else {
+                                        print(command2.run()!)
+                                    }
+                                    
+                                    print("Sucessfully Injected Tweak!")
+                                    
+                                    print("Cleaning up!")
+                                    try fm.removeItem(at: URL(fileURLWithPath: downloadPath))
+                                    try fm.removeItem(at: URL(fileURLWithPath: "/var/containers/Bundle/tweaksupport/Library/packagertemp/1"))
+                                    
+                                    self.showSuccessMessage()
+                                } else {
+                                    self.showInstallError(error: "TweakDylib or PreferenceBundle is nil!")
+                                }
                             } else {
                                 print("Library Doesnt Exist! Doing non-lib method!")
                                 
@@ -74,18 +219,12 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
                                     print("MobileSubstrate Exists! Continuing...")
                                 } else {
                                     print("MobileSubstrate doesn't exist! Suspending...")
-                                    
-                                    self.showTweakError()
+                                    self.showInstallError(error: "MobileSubstrate doesn't exist!")
                                 }
                             }
-                        } catch let error {
-                            print(error)
-                        }
-                        
-                        if(!fm.fileExists(atPath: injectShPath)) {
-                            Downloader.load(url: scriptDownloadURL!, to: URL(fileURLWithPath: injectShPath)) {
-                                print("Script downloaded!")
-                            }
+                        } catch let error2 {
+                            print(error2)
+                            self.showInstallError(error: error2.localizedDescription)
                         }
                     }
                     
@@ -100,3 +239,17 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
     }
 }
 
+extension String {
+    func run() -> String? {
+        let pipe = Pipe()
+        let process = NSTask()
+        process!.setLaunchPath("/var/")
+        process!.setArguments(["-c", self])
+        process!.setStandardOutput(pipe)
+        
+        let fileHandle = pipe.fileHandleForReading
+        process!.launch()
+        
+        return String(data: fileHandle.readDataToEndOfFile(), encoding: .utf8)
+    }
+}
