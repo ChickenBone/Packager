@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8F41C15637661DDF5D04AD8E /* Pods_Packager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAEA46152DD471AD3443BA43 /* Pods_Packager.framework */; };
 		BACDC37C2211DB4E00F8B475 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDC37B2211DB4E00F8B475 /* WelcomeScreen.swift */; };
+		BACDC380221202C400F8B475 /* UIButtonRoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDC37F221202C400F8B475 /* UIButtonRoundedCorners.swift */; };
 		E119B50C220EEB270088841D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E119B50B220EEB270088841D /* AppDelegate.swift */; };
 		E119B510220EEB270088841D /* TweaksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E119B50F220EEB270088841D /* TweaksViewController.swift */; };
 		E119B513220EEB270088841D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E119B511220EEB270088841D /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		80F7864D48002682563CD327 /* Pods-Packager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Packager.debug.xcconfig"; path = "Target Support Files/Pods-Packager/Pods-Packager.debug.xcconfig"; sourceTree = "<group>"; };
 		AAEA46152DD471AD3443BA43 /* Pods_Packager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Packager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BACDC37B2211DB4E00F8B475 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
+		BACDC37F221202C400F8B475 /* UIButtonRoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonRoundedCorners.swift; sourceTree = "<group>"; };
 		E119B508220EEB270088841D /* Packager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Packager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E119B50B220EEB270088841D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E119B50F220EEB270088841D /* TweaksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweaksViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				E1AE7285220F2F0200D8CD96 /* HomeViewController.swift */,
 				E119B50F220EEB270088841D /* TweaksViewController.swift */,
 				E119B511220EEB270088841D /* Main.storyboard */,
+				BACDC37F221202C400F8B475 /* UIButtonRoundedCorners.swift */,
 				E119B514220EEB290088841D /* Assets.xcassets */,
 				E119B516220EEB290088841D /* LaunchScreen.storyboard */,
 				E119B519220EEB290088841D /* Info.plist */,
@@ -235,6 +238,7 @@
 				BACDC37C2211DB4E00F8B475 /* WelcomeScreen.swift in Sources */,
 				E119B510220EEB270088841D /* TweaksViewController.swift in Sources */,
 				E119B50C220EEB270088841D /* AppDelegate.swift in Sources */,
+				BACDC380221202C400F8B475 /* UIButtonRoundedCorners.swift in Sources */,
 				E1AE7288220F704300D8CD96 /* Downloader.swift in Sources */,
 				E16C0D1D2210CEC2003FE72C /* Utils.m in Sources */,
 				E1AE7286220F2F0200D8CD96 /* HomeViewController.swift in Sources */,

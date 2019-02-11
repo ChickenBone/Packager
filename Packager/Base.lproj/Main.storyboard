@@ -62,8 +62,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySg-bw-Aa3">
-                                <rect key="frame" x="90.333333333333343" y="381" width="200.00000000000003" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySg-bw-Aa3" customClass="ButtonRoundedCorners" customModule="Packager" customModuleProvider="target">
+                                <rect key="frame" x="90" y="381" width="195" height="50"/>
                                 <color key="backgroundColor" red="0.050980392156862744" green="0.19607843137254902" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="a3j-2Z-lUs"/>
@@ -77,13 +77,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Packager" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUF-zp-AjS">
-                                <rect key="frame" x="80.333333333333343" y="64" width="220.00000000000003" height="40.666666666666657"/>
+                                <rect key="frame" x="80" y="64" width="215" height="41"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <color key="textColor" red="0.25882352941176467" green="0.95686274509803915" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Welcome to Packager!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MeU-NP-WpX">
-                                <rect key="frame" x="90.333333333333343" y="184.66666666666666" width="200.00000000000003" height="15"/>
+                                <rect key="frame" x="90" y="155" width="195" height="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A package manger designed for RootlessJB! Please note that Packager is in early development and it is not finished." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOS-8H-sNY">
+                                <rect key="frame" x="30" y="749" width="315" height="43"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -96,15 +102,19 @@
                             <constraint firstItem="MeU-NP-WpX" firstAttribute="top" secondItem="TUF-zp-AjS" secondAttribute="bottom" constant="80" id="8rZ-qa-tts"/>
                             <constraint firstItem="MeU-NP-WpX" firstAttribute="centerX" secondItem="6Na-u5-pav" secondAttribute="centerX" id="MDg-xz-zhc"/>
                             <constraint firstItem="ySg-bw-Aa3" firstAttribute="centerY" secondItem="6Na-u5-pav" secondAttribute="centerY" id="Noi-bn-rk0"/>
+                            <constraint firstItem="WOS-8H-sNY" firstAttribute="centerX" secondItem="6Na-u5-pav" secondAttribute="centerX" id="Rzp-ZZ-uZJ"/>
                             <constraint firstItem="ySg-bw-Aa3" firstAttribute="centerX" secondItem="6Na-u5-pav" secondAttribute="centerX" id="V99-VS-P8b"/>
                             <constraint firstItem="v8p-Pa-Ewj" firstAttribute="trailing" secondItem="MeU-NP-WpX" secondAttribute="trailing" constant="90" id="Wt2-01-itv"/>
                             <constraint firstItem="TUF-zp-AjS" firstAttribute="leading" secondItem="v8p-Pa-Ewj" secondAttribute="leading" constant="80" id="YxM-GP-oBT"/>
                             <constraint firstItem="MeU-NP-WpX" firstAttribute="top" secondItem="TUF-zp-AjS" secondAttribute="bottom" constant="50" id="cGZ-pM-ugr"/>
+                            <constraint firstItem="WOS-8H-sNY" firstAttribute="leading" secondItem="6Na-u5-pav" secondAttribute="leading" constant="30" id="cac-Lz-osG"/>
                             <constraint firstItem="TUF-zp-AjS" firstAttribute="leading" secondItem="v8p-Pa-Ewj" secondAttribute="leading" constant="80" id="ccW-Fc-Aaj"/>
                             <constraint firstItem="ySg-bw-Aa3" firstAttribute="leading" secondItem="v8p-Pa-Ewj" secondAttribute="leading" constant="90" id="eGF-X2-EQA"/>
                             <constraint firstItem="MeU-NP-WpX" firstAttribute="leading" secondItem="v8p-Pa-Ewj" secondAttribute="leading" constant="90" id="glt-hU-qom"/>
+                            <constraint firstAttribute="bottom" secondItem="WOS-8H-sNY" secondAttribute="bottom" constant="20" id="pfE-Br-Q8P"/>
                             <constraint firstItem="v8p-Pa-Ewj" firstAttribute="trailing" secondItem="TUF-zp-AjS" secondAttribute="trailing" constant="80" id="pgV-bE-DbE"/>
                             <constraint firstItem="ySg-bw-Aa3" firstAttribute="centerY" secondItem="6Na-u5-pav" secondAttribute="centerY" id="qhy-3Z-dnM"/>
+                            <constraint firstAttribute="trailing" secondItem="WOS-8H-sNY" secondAttribute="trailing" constant="30" id="tMz-Tm-NY3"/>
                             <constraint firstItem="v8p-Pa-Ewj" firstAttribute="trailing" secondItem="ySg-bw-Aa3" secondAttribute="trailing" constant="90" id="tg5-ys-0HL"/>
                             <constraint firstItem="TUF-zp-AjS" firstAttribute="top" secondItem="v8p-Pa-Ewj" secondAttribute="top" constant="20" id="uOB-Ib-pqU"/>
                         </constraints>
@@ -135,7 +145,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a PATCHED tweak URL (.zip please)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jem-qo-U8D">
-                                    <rect key="frame" x="27.333333333333343" y="8" width="317.66666666666663" height="21"/>
+                                    <rect key="frame" x="27" y="8" width="318" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
