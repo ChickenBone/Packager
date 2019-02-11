@@ -69,9 +69,14 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
     }
     
     func showSuccessMessage() {
-        let alert2 = UIAlertController(title: "Packager", message: "Your tweak was installed! Reboot or inject yourself to finish the process!", preferredStyle: .alert)
+        let alert2 = UIAlertController(title: "Packager", message: "Your tweak was installed!", preferredStyle: .alert)
         
-        let action2 = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+        let action = UIAlertAction(title: "Respring", style: UIAlertAction.Style.default) {
+            UIAlertAction in
+            InstallUtils.init().killsb()
+        }
+        
+        let action2 = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default) {
             UIAlertAction in
             alert2.dismiss(animated: false, completion: nil)
         }
@@ -83,32 +88,19 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
     }
     
     func injectFiles(tweakDylib: URL, preferenceBundle: URL) {
-        /*self.log(message: "Injecting TweakDylib...")
+        //self.log(message: "Injecting isn't supported yet.... Skipping.")
+
+        let installUtils = InstallUtils.init()
         
-        let command = "inject " + (tweakDylib.absoluteURL.absoluteString)
-        
-        if(command == "inject ") {
-            self.showInstallError(error: "Inject command is empty!")
-        } else {
-            system(command)
-        }
+        self.log(message: "Injecting TweakDylib...")
+        installUtils.inject(tweakDylib.absoluteString)
         
         self.log(message: "Injected TweakDylib!")
-        
+    
         self.log(message: "Injecting PreferenceBundle...")
-        
-        let command2 = "inject " + (preferenceBundle.absoluteURL.absoluteString)
-        
-        if(command2 == "inject ") {
-            self.showInstallError(error: "Inject2 command is empty!")
-        } else {
-            system(command2)
-        }
-         
- */
-        let pd = pid_t.self;
-        let status = posix_spawn(pd.init(bitPattern: pd), "/var/", NULL, NULL, ["killall", "SpringBoard"], environ);
-        self.log(message: "Injecting isn't supported yet.... Skipping.")
+        installUtils.inject(preferenceBundle.absoluteString)
+
+        self.log(message: "Injected PreferenceBundle!")
         
         self.log(message: "Cleaning up!")
         do {

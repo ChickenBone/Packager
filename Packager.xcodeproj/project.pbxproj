@@ -13,6 +13,7 @@
 		E119B513220EEB270088841D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E119B511220EEB270088841D /* Main.storyboard */; };
 		E119B515220EEB290088841D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E119B514220EEB290088841D /* Assets.xcassets */; };
 		E119B518220EEB290088841D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E119B516220EEB290088841D /* LaunchScreen.storyboard */; };
+		E16C0D1D2210CEC2003FE72C /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E16C0D1C2210CEC2003FE72C /* Utils.m */; };
 		E1AE7286220F2F0200D8CD96 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AE7285220F2F0200D8CD96 /* HomeViewController.swift */; };
 		E1AE7288220F704300D8CD96 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AE7287220F704300D8CD96 /* Downloader.swift */; };
 /* End PBXBuildFile section */
@@ -28,10 +29,12 @@
 		E119B514220EEB290088841D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E119B517220EEB290088841D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E119B519220EEB290088841D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E16C0D1C2210CEC2003FE72C /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		E16C0D1E2210CECE003FE72C /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		E16C0D1F2210CF5A003FE72C /* Packager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Packager-Bridging-Header.h"; sourceTree = "<group>"; };
 		E1AE7285220F2F0200D8CD96 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E1AE7287220F704300D8CD96 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		E1CD867C220EF6630067F263 /* Packager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Packager.entitlements; sourceTree = "<group>"; };
-		E1E1F7B2221020D90012ED6D /* NSTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSTask.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +96,9 @@
 				E119B516220EEB290088841D /* LaunchScreen.storyboard */,
 				E119B519220EEB290088841D /* Info.plist */,
 				E1AE7287220F704300D8CD96 /* Downloader.swift */,
-				E1E1F7B2221020D90012ED6D /* NSTask.h */,
+				E16C0D1C2210CEC2003FE72C /* Utils.m */,
+				E16C0D1E2210CECE003FE72C /* Utils.h */,
+				E16C0D1F2210CF5A003FE72C /* Packager-Bridging-Header.h */,
 			);
 			path = Packager;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 				E119B510220EEB270088841D /* TweaksViewController.swift in Sources */,
 				E119B50C220EEB270088841D /* AppDelegate.swift in Sources */,
 				E1AE7288220F704300D8CD96 /* Downloader.swift in Sources */,
+				E16C0D1D2210CEC2003FE72C /* Utils.m in Sources */,
 				E1AE7286220F2F0200D8CD96 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,7 +394,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = club.conorthedev.apps.Packager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = Packager/NSTask.h;
+				SWIFT_OBJC_BRIDGING_HEADER = Packager/Utils.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -414,7 +420,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = club.conorthedev.apps.Packager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = Packager/NSTask.h;
+				SWIFT_OBJC_BRIDGING_HEADER = Packager/Utils.h;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
