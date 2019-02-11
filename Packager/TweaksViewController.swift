@@ -76,7 +76,7 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
             alert2.dismiss(animated: false, completion: nil)
         }
         
-        alert2.addAction(action)
+        alert2.addAction(action2)
         alert2.addAction(action2)
         
         self.present(alert2, animated: true, completion: nil)
@@ -107,7 +107,6 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
          
  */
         let pd = pid_t.self;
-        let status = posix_spawn(pd.init(bitPattern: pd), "/var/", NULL, NULL, ["killall", "SpringBoard"], environ);
         self.log(message: "Injecting isn't supported yet.... Skipping.")
         
         self.log(message: "Cleaning up!")
