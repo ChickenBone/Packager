@@ -10,14 +10,34 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="acf-yr-Q4Q">
+            <objects>
+                <tabBarController id="mhp-c5-RPa" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7aZ-EH-wPb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="k4n-kS-bDk" kind="relationship" relationship="viewControllers" id="4Fz-5c-P1t"/>
+                        <segue destination="op0-SH-LQ4" kind="relationship" relationship="viewControllers" id="Vy9-Rc-NJZ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="grR-45-Clo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="478" y="2"/>
+        </scene>
         <!--Packager-->
         <scene sceneID="rQx-Iu-rl7">
             <objects>
-                <tableViewController id="cty-Rs-LtA" customClass="HomeViewController" customModule="Packager" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Packager" id="cty-Rs-LtA" customClass="HomeViewController" customModule="Packager" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" keyboardDismissMode="onDrag" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="PaR-ZZ-246" userLabel="Installed Tweaks">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="rAH-kb-cGb">
                                 <rect key="frame" x="0.0" y="55.333333333333343" width="375" height="44"/>
@@ -40,6 +60,7 @@
                                         <constraint firstItem="TQn-UF-oM7" firstAttribute="leading" secondItem="MAu-op-hDm" secondAttribute="leadingMargin" id="hx3-Df-L1d"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -52,7 +73,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BC1-BI-Gs8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1471" y="-325"/>
+            <point key="canvasLocation" x="2412" y="-313.30049261083747"/>
         </scene>
         <!--Welcome Screen-->
         <scene sceneID="9cB-OT-E7v">
@@ -63,59 +84,50 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySg-bw-Aa3" customClass="ButtonRoundedCorners" customModule="Packager" customModuleProvider="target">
-                                <rect key="frame" x="90" y="381" width="195" height="50"/>
+                                <rect key="frame" x="87.666666666666686" y="381" width="200" height="50"/>
                                 <color key="backgroundColor" red="0.050980392156862744" green="0.19607843137254902" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="a3j-2Z-lUs"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="a3j-2Z-lUs"/>
                                     <constraint firstAttribute="height" constant="50" id="mEe-dq-Gf8"/>
                                 </constraints>
                                 <state key="normal" title="Proceed">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cty-Rs-LtA" kind="presentation" modalTransitionStyle="crossDissolve" id="32W-kN-IDo"/>
+                                    <segue destination="mhp-c5-RPa" kind="show" id="ibG-0e-VnC"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Packager" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUF-zp-AjS">
-                                <rect key="frame" x="80" y="64" width="215" height="41"/>
+                                <rect key="frame" x="113.33333333333333" y="64" width="148.33333333333337" height="41"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <color key="textColor" red="0.25882352941176467" green="0.95686274509803915" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Welcome to Packager!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MeU-NP-WpX">
-                                <rect key="frame" x="90" y="155" width="195" height="15"/>
+                                <rect key="frame" x="122.00000000000001" y="155" width="131.33333333333337" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A package manger designed for RootlessJB! Please note that Packager is in early development and it is not finished." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOS-8H-sNY">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Package Manager designed for Rootless, please note that it is in Early Development and bugs should be expected." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOS-8H-sNY">
                                 <rect key="frame" x="30" y="749" width="315" height="43"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="TUF-zp-AjS" firstAttribute="centerX" secondItem="6Na-u5-pav" secondAttribute="centerX" id="7Qe-sv-XVZ"/>
                             <constraint firstItem="ySg-bw-Aa3" firstAttribute="centerX" secondItem="6Na-u5-pav" secondAttribute="centerX" id="7lY-qz-RZb"/>
-                            <constraint firstItem="MeU-NP-WpX" firstAttribute="top" secondItem="TUF-zp-AjS" secondAttribute="bottom" constant="80" id="8rZ-qa-tts"/>
                             <constraint firstItem="MeU-NP-WpX" firstAttribute="centerX" secondItem="6Na-u5-pav" secondAttribute="centerX" id="MDg-xz-zhc"/>
                             <constraint firstItem="ySg-bw-Aa3" firstAttribute="centerY" secondItem="6Na-u5-pav" secondAttribute="centerY" id="Noi-bn-rk0"/>
                             <constraint firstItem="WOS-8H-sNY" firstAttribute="centerX" secondItem="6Na-u5-pav" secondAttribute="centerX" id="Rzp-ZZ-uZJ"/>
                             <constraint firstItem="ySg-bw-Aa3" firstAttribute="centerX" secondItem="6Na-u5-pav" secondAttribute="centerX" id="V99-VS-P8b"/>
-                            <constraint firstItem="v8p-Pa-Ewj" firstAttribute="trailing" secondItem="MeU-NP-WpX" secondAttribute="trailing" constant="90" id="Wt2-01-itv"/>
-                            <constraint firstItem="TUF-zp-AjS" firstAttribute="leading" secondItem="v8p-Pa-Ewj" secondAttribute="leading" constant="80" id="YxM-GP-oBT"/>
                             <constraint firstItem="MeU-NP-WpX" firstAttribute="top" secondItem="TUF-zp-AjS" secondAttribute="bottom" constant="50" id="cGZ-pM-ugr"/>
                             <constraint firstItem="WOS-8H-sNY" firstAttribute="leading" secondItem="6Na-u5-pav" secondAttribute="leading" constant="30" id="cac-Lz-osG"/>
-                            <constraint firstItem="TUF-zp-AjS" firstAttribute="leading" secondItem="v8p-Pa-Ewj" secondAttribute="leading" constant="80" id="ccW-Fc-Aaj"/>
-                            <constraint firstItem="ySg-bw-Aa3" firstAttribute="leading" secondItem="v8p-Pa-Ewj" secondAttribute="leading" constant="90" id="eGF-X2-EQA"/>
-                            <constraint firstItem="MeU-NP-WpX" firstAttribute="leading" secondItem="v8p-Pa-Ewj" secondAttribute="leading" constant="90" id="glt-hU-qom"/>
                             <constraint firstAttribute="bottom" secondItem="WOS-8H-sNY" secondAttribute="bottom" constant="20" id="pfE-Br-Q8P"/>
-                            <constraint firstItem="v8p-Pa-Ewj" firstAttribute="trailing" secondItem="TUF-zp-AjS" secondAttribute="trailing" constant="80" id="pgV-bE-DbE"/>
                             <constraint firstItem="ySg-bw-Aa3" firstAttribute="centerY" secondItem="6Na-u5-pav" secondAttribute="centerY" id="qhy-3Z-dnM"/>
-                            <constraint firstAttribute="trailing" secondItem="WOS-8H-sNY" secondAttribute="trailing" constant="30" id="tMz-Tm-NY3"/>
-                            <constraint firstItem="v8p-Pa-Ewj" firstAttribute="trailing" secondItem="ySg-bw-Aa3" secondAttribute="trailing" constant="90" id="tg5-ys-0HL"/>
                             <constraint firstItem="TUF-zp-AjS" firstAttribute="top" secondItem="v8p-Pa-Ewj" secondAttribute="top" constant="20" id="uOB-Ib-pqU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="v8p-Pa-Ewj"/>
@@ -123,16 +135,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CfU-mf-LUW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="671.20000000000005" y="431.5270935960591"/>
+            <point key="canvasLocation" x="-362" y="2"/>
         </scene>
         <!--Install-->
         <scene sceneID="zvx-V0-lkH">
             <objects>
-                <tableViewController id="NPQ-ga-Y5f" customClass="TweaksViewController" customModule="Packager" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Install" id="NPQ-ga-Y5f" customClass="TweaksViewController" customModule="Packager" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="oea-to-Smv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.92147773504257202" green="0.92163217067718506" blue="0.92145735025405884" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="c5U-4T-Ztt">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="504"/>
@@ -140,19 +152,20 @@
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wdB-kD-oSX">
                                     <rect key="frame" x="8" y="39" width="357" height="30"/>
-                                    <nil key="textColor"/>
+                                    <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a PATCHED tweak URL (.zip please)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jem-qo-U8D">
                                     <rect key="frame" x="27" y="8" width="318" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wk7-ed-bsw">
                                     <rect key="frame" x="115" y="77" width="142" height="30"/>
-                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Download and Install"/>
                                     <connections>
@@ -161,12 +174,13 @@
                                 </button>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Log output." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qoE-al-LIB">
                                     <rect key="frame" x="30" y="117" width="315" height="377"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
                             </subviews>
-                            <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="qoE-al-LIB" firstAttribute="top" secondItem="Wk7-ed-bsw" secondAttribute="bottom" constant="10" id="0JO-Ol-7T9"/>
                                 <constraint firstItem="jem-qo-U8D" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="c5U-4T-Ztt" secondAttribute="leading" constant="20" symbolic="YES" id="EV8-RZ-fYq"/>
@@ -199,7 +213,49 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qew-F2-Xwd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1469.5999999999999" y="375.56221889055473"/>
+            <point key="canvasLocation" x="2412" y="375.36945812807886"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="6fo-h8-GfQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="k4n-kS-bDk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="TRY-tF-xmf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="wBZ-Qk-apx">
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cty-Rs-LtA" kind="relationship" relationship="rootViewController" id="DFh-lu-vkD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Yi-MR-yg3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1469.5999999999999" y="-313.30049261083747"/>
+        </scene>
+        <!--Install PATCHED Tweak-->
+        <scene sceneID="BWy-iW-fNf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="op0-SH-LQ4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Install PATCHED Tweak" image="install" id="wCH-bg-XkG"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="E4c-WH-9fU">
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NPQ-ga-Y5f" kind="relationship" relationship="rootViewController" id="a5Y-Uc-bCI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NN8-lb-jYS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1469.5999999999999" y="375.36945812807886"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="home" width="30" height="30"/>
+        <image name="install" width="30" height="30"/>
+    </resources>
 </document>
