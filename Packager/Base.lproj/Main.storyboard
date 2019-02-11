@@ -54,69 +54,36 @@
             </objects>
             <point key="canvasLocation" x="1471" y="-325"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="yl2-sM-qoP">
-            <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
-                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="Iin-l5-FhB" kind="relationship" relationship="viewControllers" id="uxV-6Q-o1h"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
-        </scene>
-        <!--Home-->
-        <scene sceneID="h9f-L2-fRU">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Iin-l5-FhB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="home" id="SHp-ch-MTH"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="emK-Az-G2T">
-                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="cty-Rs-LtA" kind="relationship" relationship="rootViewController" id="MWS-Yh-F7L"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8eo-H7-DzY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="773.60000000000002" y="-325.18740629685158"/>
-        </scene>
         <!--Welcome Screen-->
         <scene sceneID="9cB-OT-E7v">
             <objects>
-                <viewController title="Welcome Screen" id="uYA-Fy-5Lc" sceneMemberID="viewController">
+                <viewController title="Welcome Screen" id="uYA-Fy-5Lc" customClass="WelcomeScreen" customModule="Packager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Na-u5-pav">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySg-bw-Aa3">
-                                <rect key="frame" x="159" y="396" width="57" height="30"/>
+                                <rect key="frame" x="90.333333333333343" y="381" width="200.00000000000003" height="50"/>
                                 <color key="backgroundColor" red="0.050980392156862744" green="0.19607843137254902" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="a3j-2Z-lUs"/>
+                                    <constraint firstAttribute="height" constant="50" id="mEe-dq-Gf8"/>
+                                </constraints>
                                 <state key="normal" title="Proceed">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cty-Rs-LtA" kind="show" id="32W-kN-IDo"/>
+                                    <segue destination="cty-Rs-LtA" kind="presentation" modalTransitionStyle="crossDissolve" id="32W-kN-IDo"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" text="Packager" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUF-zp-AjS">
-                                <rect key="frame" x="100" y="44" width="175.00000000000006" height="83.999999999999972"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Packager" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUF-zp-AjS">
+                                <rect key="frame" x="80.333333333333343" y="64" width="220.00000000000003" height="40.666666666666657"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <color key="textColor" red="0.25882352941176467" green="0.95686274509803915" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Packager!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MeU-NP-WpX">
-                                <rect key="frame" x="120" y="113" width="135" height="15"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Welcome to Packager!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MeU-NP-WpX">
+                                <rect key="frame" x="90.333333333333343" y="184.66666666666666" width="200.00000000000003" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -124,9 +91,22 @@
                         </subviews>
                         <color key="backgroundColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="ySg-bw-Aa3" firstAttribute="centerX" secondItem="v8p-Pa-Ewj" secondAttribute="centerX" id="1Z8-Td-Jo4"/>
-                            <constraint firstItem="TUF-zp-AjS" firstAttribute="centerX" secondItem="v8p-Pa-Ewj" secondAttribute="centerX" id="Hoq-D7-jXY"/>
-                            <constraint firstItem="ySg-bw-Aa3" firstAttribute="centerY" secondItem="v8p-Pa-Ewj" secondAttribute="centerY" id="wrA-bE-xip"/>
+                            <constraint firstItem="TUF-zp-AjS" firstAttribute="centerX" secondItem="6Na-u5-pav" secondAttribute="centerX" id="7Qe-sv-XVZ"/>
+                            <constraint firstItem="ySg-bw-Aa3" firstAttribute="centerX" secondItem="6Na-u5-pav" secondAttribute="centerX" id="7lY-qz-RZb"/>
+                            <constraint firstItem="MeU-NP-WpX" firstAttribute="top" secondItem="TUF-zp-AjS" secondAttribute="bottom" constant="80" id="8rZ-qa-tts"/>
+                            <constraint firstItem="MeU-NP-WpX" firstAttribute="centerX" secondItem="6Na-u5-pav" secondAttribute="centerX" id="MDg-xz-zhc"/>
+                            <constraint firstItem="ySg-bw-Aa3" firstAttribute="centerY" secondItem="6Na-u5-pav" secondAttribute="centerY" id="Noi-bn-rk0"/>
+                            <constraint firstItem="ySg-bw-Aa3" firstAttribute="centerX" secondItem="6Na-u5-pav" secondAttribute="centerX" id="V99-VS-P8b"/>
+                            <constraint firstItem="v8p-Pa-Ewj" firstAttribute="trailing" secondItem="MeU-NP-WpX" secondAttribute="trailing" constant="90" id="Wt2-01-itv"/>
+                            <constraint firstItem="TUF-zp-AjS" firstAttribute="leading" secondItem="v8p-Pa-Ewj" secondAttribute="leading" constant="80" id="YxM-GP-oBT"/>
+                            <constraint firstItem="MeU-NP-WpX" firstAttribute="top" secondItem="TUF-zp-AjS" secondAttribute="bottom" constant="50" id="cGZ-pM-ugr"/>
+                            <constraint firstItem="TUF-zp-AjS" firstAttribute="leading" secondItem="v8p-Pa-Ewj" secondAttribute="leading" constant="80" id="ccW-Fc-Aaj"/>
+                            <constraint firstItem="ySg-bw-Aa3" firstAttribute="leading" secondItem="v8p-Pa-Ewj" secondAttribute="leading" constant="90" id="eGF-X2-EQA"/>
+                            <constraint firstItem="MeU-NP-WpX" firstAttribute="leading" secondItem="v8p-Pa-Ewj" secondAttribute="leading" constant="90" id="glt-hU-qom"/>
+                            <constraint firstItem="v8p-Pa-Ewj" firstAttribute="trailing" secondItem="TUF-zp-AjS" secondAttribute="trailing" constant="80" id="pgV-bE-DbE"/>
+                            <constraint firstItem="ySg-bw-Aa3" firstAttribute="centerY" secondItem="6Na-u5-pav" secondAttribute="centerY" id="qhy-3Z-dnM"/>
+                            <constraint firstItem="v8p-Pa-Ewj" firstAttribute="trailing" secondItem="ySg-bw-Aa3" secondAttribute="trailing" constant="90" id="tg5-ys-0HL"/>
+                            <constraint firstItem="TUF-zp-AjS" firstAttribute="top" secondItem="v8p-Pa-Ewj" secondAttribute="top" constant="20" id="uOB-Ib-pqU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="v8p-Pa-Ewj"/>
                     </view>
@@ -212,10 +192,4 @@
             <point key="canvasLocation" x="1469.5999999999999" y="375.56221889055473"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="home" width="30" height="30"/>
-    </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="32W-kN-IDo"/>
-    </inferredMetricsTieBreakers>
 </document>

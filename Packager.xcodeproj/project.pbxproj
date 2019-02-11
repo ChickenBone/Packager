@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8F41C15637661DDF5D04AD8E /* Pods_Packager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAEA46152DD471AD3443BA43 /* Pods_Packager.framework */; };
+		BACDC37C2211DB4E00F8B475 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDC37B2211DB4E00F8B475 /* WelcomeScreen.swift */; };
 		E119B50C220EEB270088841D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E119B50B220EEB270088841D /* AppDelegate.swift */; };
 		E119B510220EEB270088841D /* TweaksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E119B50F220EEB270088841D /* TweaksViewController.swift */; };
 		E119B513220EEB270088841D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E119B511220EEB270088841D /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 		744931D0BD6E72B2E06FD40F /* Pods-Packager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Packager.release.xcconfig"; path = "Target Support Files/Pods-Packager/Pods-Packager.release.xcconfig"; sourceTree = "<group>"; };
 		80F7864D48002682563CD327 /* Pods-Packager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Packager.debug.xcconfig"; path = "Target Support Files/Pods-Packager/Pods-Packager.debug.xcconfig"; sourceTree = "<group>"; };
 		AAEA46152DD471AD3443BA43 /* Pods_Packager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Packager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BACDC37B2211DB4E00F8B475 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 		E119B508220EEB270088841D /* Packager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Packager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E119B50B220EEB270088841D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E119B50F220EEB270088841D /* TweaksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweaksViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			children = (
 				E1CD867C220EF6630067F263 /* Packager.entitlements */,
 				E119B50B220EEB270088841D /* AppDelegate.swift */,
+				BACDC37B2211DB4E00F8B475 /* WelcomeScreen.swift */,
 				E1AE7285220F2F0200D8CD96 /* HomeViewController.swift */,
 				E119B50F220EEB270088841D /* TweaksViewController.swift */,
 				E119B511220EEB270088841D /* Main.storyboard */,
@@ -229,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BACDC37C2211DB4E00F8B475 /* WelcomeScreen.swift in Sources */,
 				E119B510220EEB270088841D /* TweaksViewController.swift in Sources */,
 				E119B50C220EEB270088841D /* AppDelegate.swift in Sources */,
 				E1AE7288220F704300D8CD96 /* Downloader.swift in Sources */,
