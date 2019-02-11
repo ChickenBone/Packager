@@ -81,7 +81,7 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
             alert2.dismiss(animated: false, completion: nil)
         }
         
-        alert2.addAction(action)
+        alert2.addAction(action2)
         alert2.addAction(action2)
         
         self.present(alert2, animated: true, completion: nil)
@@ -98,6 +98,7 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
         self.log(message: "Injected TweakDylib!")
     
         self.log(message: "Injecting PreferenceBundle...")
+
         installUtils.inject(preferenceBundle.absoluteString)
 
         self.log(message: "Injected PreferenceBundle!")
