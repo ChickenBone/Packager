@@ -98,19 +98,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Packager" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUF-zp-AjS">
-                                <rect key="frame" x="113.33333333333333" y="64" width="148.33333333333337" height="41"/>
+                                <rect key="frame" x="113.66666666666669" y="64" width="148" height="41"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <color key="textColor" red="0.25882352941176467" green="0.95686274509803915" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Welcome to Packager!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MeU-NP-WpX">
-                                <rect key="frame" x="122.00000000000001" y="155" width="131.33333333333337" height="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Package Manager designed for Rootless, please note that it is in Early Development and bugs should be expected." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOS-8H-sNY">
+                                <rect key="frame" x="30" y="735" width="315" height="43"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Package Manager designed for Rootless, please note that it is in Early Development and bugs should be expected." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WOS-8H-sNY">
-                                <rect key="frame" x="30" y="749" width="315" height="43"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Welcome to Packager!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MeU-NP-WpX">
+                                <rect key="frame" x="122" y="113" width="131" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -124,9 +124,9 @@
                             <constraint firstItem="ySg-bw-Aa3" firstAttribute="centerY" secondItem="6Na-u5-pav" secondAttribute="centerY" id="Noi-bn-rk0"/>
                             <constraint firstItem="WOS-8H-sNY" firstAttribute="centerX" secondItem="6Na-u5-pav" secondAttribute="centerX" id="Rzp-ZZ-uZJ"/>
                             <constraint firstItem="ySg-bw-Aa3" firstAttribute="centerX" secondItem="6Na-u5-pav" secondAttribute="centerX" id="V99-VS-P8b"/>
-                            <constraint firstItem="MeU-NP-WpX" firstAttribute="top" secondItem="TUF-zp-AjS" secondAttribute="bottom" constant="50" id="cGZ-pM-ugr"/>
+                            <constraint firstItem="MeU-NP-WpX" firstAttribute="top" secondItem="TUF-zp-AjS" secondAttribute="bottom" constant="8" id="cGZ-pM-ugr"/>
                             <constraint firstItem="WOS-8H-sNY" firstAttribute="leading" secondItem="6Na-u5-pav" secondAttribute="leading" constant="30" id="cac-Lz-osG"/>
-                            <constraint firstAttribute="bottom" secondItem="WOS-8H-sNY" secondAttribute="bottom" constant="20" id="pfE-Br-Q8P"/>
+                            <constraint firstAttribute="bottom" secondItem="WOS-8H-sNY" secondAttribute="bottom" constant="34" id="pfE-Br-Q8P"/>
                             <constraint firstItem="ySg-bw-Aa3" firstAttribute="centerY" secondItem="6Na-u5-pav" secondAttribute="centerY" id="qhy-3Z-dnM"/>
                             <constraint firstItem="TUF-zp-AjS" firstAttribute="top" secondItem="v8p-Pa-Ewj" secondAttribute="top" constant="20" id="uOB-Ib-pqU"/>
                         </constraints>
@@ -158,43 +158,43 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a PATCHED tweak URL (.zip please)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jem-qo-U8D">
-                                    <rect key="frame" x="27" y="8" width="318" height="21"/>
+                                    <rect key="frame" x="27.333333333333343" y="8" width="317.66666666666663" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wk7-ed-bsw">
-                                    <rect key="frame" x="115" y="77" width="142" height="30"/>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Log output." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qoE-al-LIB">
+                                    <rect key="frame" x="30" y="149" width="315" height="345"/>
                                     <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wk7-ed-bsw" customClass="ButtonRoundedCorners" customModule="Packager" customModuleProvider="target">
+                                    <rect key="frame" x="90" y="94" width="195" height="30"/>
+                                    <color key="backgroundColor" red="0.20030295849999999" green="0.53817671540000001" blue="0.4278131127" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Download and Install"/>
                                     <connections>
                                         <action selector="startDownload:" destination="NPQ-ga-Y5f" eventType="touchUpInside" id="sSY-cs-3H2"/>
                                     </connections>
                                 </button>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Log output." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qoE-al-LIB">
-                                    <rect key="frame" x="30" y="117" width="315" height="377"/>
-                                    <color key="backgroundColor" red="0.12941176469999999" green="0.12941176469999999" blue="0.12941176469999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                </textView>
                             </subviews>
                             <color key="backgroundColor" red="0.090196078430000007" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstItem="qoE-al-LIB" firstAttribute="top" secondItem="Wk7-ed-bsw" secondAttribute="bottom" constant="10" id="0JO-Ol-7T9"/>
                                 <constraint firstItem="jem-qo-U8D" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="c5U-4T-Ztt" secondAttribute="leading" constant="20" symbolic="YES" id="EV8-RZ-fYq"/>
                                 <constraint firstAttribute="trailing" secondItem="wdB-kD-oSX" secondAttribute="trailing" constant="10" id="HaC-B0-j5G"/>
+                                <constraint firstItem="Wk7-ed-bsw" firstAttribute="centerX" secondItem="c5U-4T-Ztt" secondAttribute="centerX" id="NZS-LI-BPb"/>
                                 <constraint firstItem="wdB-kD-oSX" firstAttribute="leading" secondItem="c5U-4T-Ztt" secondAttribute="leading" constant="8" id="NqC-Hf-SWX"/>
-                                <constraint firstItem="Wk7-ed-bsw" firstAttribute="top" secondItem="wdB-kD-oSX" secondAttribute="bottom" constant="8" id="PMJ-0v-TDV"/>
+                                <constraint firstItem="Wk7-ed-bsw" firstAttribute="leading" secondItem="c5U-4T-Ztt" secondAttribute="leading" constant="90" id="Sgb-T1-6yi"/>
                                 <constraint firstAttribute="trailing" secondItem="jem-qo-U8D" secondAttribute="trailing" constant="30" id="Vcw-Vl-smy"/>
                                 <constraint firstAttribute="bottom" secondItem="qoE-al-LIB" secondAttribute="bottom" constant="10" id="ZQm-JI-1AL"/>
                                 <constraint firstAttribute="trailing" secondItem="qoE-al-LIB" secondAttribute="trailing" constant="30" id="bR9-dZ-2d3"/>
                                 <constraint firstItem="jem-qo-U8D" firstAttribute="top" secondItem="c5U-4T-Ztt" secondAttribute="top" constant="8" id="gZG-xL-X6y"/>
-                                <constraint firstItem="Wk7-ed-bsw" firstAttribute="leading" secondItem="c5U-4T-Ztt" secondAttribute="leading" constant="115" id="i7A-6U-2Y4"/>
                                 <constraint firstItem="wdB-kD-oSX" firstAttribute="top" secondItem="jem-qo-U8D" secondAttribute="bottom" constant="10" id="ivS-dK-pVK"/>
-                                <constraint firstItem="Wk7-ed-bsw" firstAttribute="top" secondItem="wdB-kD-oSX" secondAttribute="bottom" constant="8" id="jDi-us-795"/>
-                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Wk7-ed-bsw" secondAttribute="trailing" constant="20" symbolic="YES" id="rAR-GW-EgX"/>
+                                <constraint firstAttribute="trailing" secondItem="Wk7-ed-bsw" secondAttribute="trailing" constant="90" id="j7d-wJ-m2c"/>
+                                <constraint firstItem="qoE-al-LIB" firstAttribute="top" secondItem="Wk7-ed-bsw" secondAttribute="bottom" constant="25" id="jqL-Cg-czW"/>
+                                <constraint firstItem="Wk7-ed-bsw" firstAttribute="top" secondItem="wdB-kD-oSX" secondAttribute="bottom" constant="25" id="rAE-ZW-lJx"/>
                                 <constraint firstItem="qoE-al-LIB" firstAttribute="leading" secondItem="c5U-4T-Ztt" secondAttribute="leading" constant="30" id="wg7-PG-MS8"/>
                                 <constraint firstItem="wdB-kD-oSX" firstAttribute="top" secondItem="jem-qo-U8D" secondAttribute="bottom" constant="10" id="yVs-cu-tcy"/>
                             </constraints>
@@ -234,11 +234,11 @@
             </objects>
             <point key="canvasLocation" x="1469.5999999999999" y="-313.30049261083747"/>
         </scene>
-        <!--Install PATCHED Tweak-->
+        <!--Install-->
         <scene sceneID="BWy-iW-fNf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="op0-SH-LQ4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Install PATCHED Tweak" image="install" id="wCH-bg-XkG"/>
+                    <tabBarItem key="tabBarItem" title="Install" image="install" id="wCH-bg-XkG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" largeTitles="YES" id="E4c-WH-9fU">
                         <rect key="frame" x="0.0" y="44" width="375" height="96"/>
