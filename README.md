@@ -1,2 +1,2 @@
 # Packager
-An iOS Package Manager Developed by ConorTheDev &amp; gstpsk
+An iOS Package Manager Developed by ConorTheDev &amp; gstpsk &amp; Chickenbone
