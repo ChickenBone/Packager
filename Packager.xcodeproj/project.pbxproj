@@ -392,14 +392,14 @@
 				CODE_SIGN_ENTITLEMENTS = Packager/Packager.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 89ZC2KMMLX;
+				DEVELOPMENT_TEAM = 3ELFC6YGTZ;
 				INFOPLIST_FILE = Packager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chickenbone.Packager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gstpsk.Packager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = Packager/Utils.h;
@@ -418,14 +418,14 @@
 				CODE_SIGN_ENTITLEMENTS = Packager/Packager.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 89ZC2KMMLX;
+				DEVELOPMENT_TEAM = 3ELFC6YGTZ;
 				INFOPLIST_FILE = Packager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chickenbone.Packager;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gstpsk.Packager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = Packager/Utils.h;

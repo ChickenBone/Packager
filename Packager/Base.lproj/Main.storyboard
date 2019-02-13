@@ -84,23 +84,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySg-bw-Aa3" customClass="ButtonRoundedCorners" customModule="Packager" customModuleProvider="target">
-                                <rect key="frame" x="87.666666666666686" y="381" width="200" height="50"/>
-                                <color key="backgroundColor" red="0.050980392156862744" green="0.19607843137254902" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="a3j-2Z-lUs"/>
-                                    <constraint firstAttribute="height" constant="50" id="mEe-dq-Gf8"/>
-                                </constraints>
-                                <state key="normal" title="Proceed">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="mhp-c5-RPa" kind="show" id="ibG-0e-VnC"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Packager" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUF-zp-AjS">
-                                <rect key="frame" x="113.66666666666669" y="64" width="148" height="41"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <rect key="frame" x="100.66666666666669" y="94" width="174" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <color key="textColor" red="0.25882352941176467" green="0.95686274509803915" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -111,32 +97,93 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="Welcome to Packager!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MeU-NP-WpX">
-                                <rect key="frame" x="122" y="113" width="131" height="15"/>
+                                <rect key="frame" x="122" y="150" width="131" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySg-bw-Aa3" customClass="ButtonRoundedCorners" customModule="Packager" customModuleProvider="target">
+                                <rect key="frame" x="62.666666666666657" y="381" width="249.99999999999997" height="50"/>
+                                <color key="backgroundColor" red="0.050980392156862744" green="0.19607843137254902" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="a3j-2Z-lUs"/>
+                                    <constraint firstAttribute="height" constant="50" id="mEe-dq-Gf8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="Proceed">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="mhp-c5-RPa" kind="show" id="ibG-0e-VnC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0UZ-eo-RRk" customClass="ButtonRoundedCorners" customModule="Packager" customModuleProvider="target">
+                                <rect key="frame" x="40" y="381" width="115" height="50"/>
+                                <color key="backgroundColor" red="0.050980392159999999" green="0.1960784314" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="115" id="1LW-Zz-PRR"/>
+                                    <constraint firstAttribute="height" constant="50" id="hvm-bO-WWG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Quit"/>
+                                <connections>
+                                    <action selector="quitButtonPress:" destination="uYA-Fy-5Lc" eventType="touchUpInside" id="jnM-aq-hdG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are sandboxed. Unsandbox using iSuperSU." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiB-Gn-oyH">
+                                <rect key="frame" x="51.666666666666657" y="358" width="272" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIF-Yf-mrg" customClass="ButtonRoundedCorners" customModule="Packager" customModuleProvider="target">
+                                <rect key="frame" x="220" y="381" width="115" height="50"/>
+                                <color key="backgroundColor" red="0.050980392159999999" green="0.1960784314" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="K5N-hG-aTx"/>
+                                    <constraint firstAttribute="width" constant="115" id="RDR-47-xI0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Refresh"/>
+                                <connections>
+                                    <action selector="refreshButtonPress:" destination="uYA-Fy-5Lc" eventType="touchUpInside" id="KCs-Gg-7wG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.090196078431372548" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="TUF-zp-AjS" firstAttribute="centerX" secondItem="6Na-u5-pav" secondAttribute="centerX" id="7Qe-sv-XVZ"/>
                             <constraint firstItem="ySg-bw-Aa3" firstAttribute="centerX" secondItem="6Na-u5-pav" secondAttribute="centerX" id="7lY-qz-RZb"/>
+                            <constraint firstItem="ySg-bw-Aa3" firstAttribute="top" secondItem="XiB-Gn-oyH" secondAttribute="bottom" constant="8" id="ATO-2k-egn"/>
+                            <constraint firstItem="0UZ-eo-RRk" firstAttribute="centerY" secondItem="6Na-u5-pav" secondAttribute="centerY" id="H6W-r5-0Yh"/>
+                            <constraint firstItem="0UZ-eo-RRk" firstAttribute="top" secondItem="XiB-Gn-oyH" secondAttribute="bottom" constant="8" id="IP1-eD-X5a"/>
+                            <constraint firstItem="v8p-Pa-Ewj" firstAttribute="trailing" secondItem="VIF-Yf-mrg" secondAttribute="trailing" constant="40" id="LhB-Bl-8VS"/>
                             <constraint firstItem="MeU-NP-WpX" firstAttribute="centerX" secondItem="6Na-u5-pav" secondAttribute="centerX" id="MDg-xz-zhc"/>
                             <constraint firstItem="ySg-bw-Aa3" firstAttribute="centerY" secondItem="6Na-u5-pav" secondAttribute="centerY" id="Noi-bn-rk0"/>
+                            <constraint firstItem="0UZ-eo-RRk" firstAttribute="leading" secondItem="v8p-Pa-Ewj" secondAttribute="leading" constant="40" id="OXa-Hs-btu"/>
                             <constraint firstItem="WOS-8H-sNY" firstAttribute="centerX" secondItem="6Na-u5-pav" secondAttribute="centerX" id="Rzp-ZZ-uZJ"/>
-                            <constraint firstItem="ySg-bw-Aa3" firstAttribute="centerX" secondItem="6Na-u5-pav" secondAttribute="centerX" id="V99-VS-P8b"/>
                             <constraint firstItem="MeU-NP-WpX" firstAttribute="top" secondItem="TUF-zp-AjS" secondAttribute="bottom" constant="8" id="cGZ-pM-ugr"/>
                             <constraint firstItem="WOS-8H-sNY" firstAttribute="leading" secondItem="6Na-u5-pav" secondAttribute="leading" constant="30" id="cac-Lz-osG"/>
+                            <constraint firstItem="VIF-Yf-mrg" firstAttribute="top" secondItem="XiB-Gn-oyH" secondAttribute="bottom" constant="8" id="cjD-tn-wFj"/>
+                            <constraint firstItem="VIF-Yf-mrg" firstAttribute="centerY" secondItem="6Na-u5-pav" secondAttribute="centerY" id="gX4-ME-dTw"/>
+                            <constraint firstItem="XiB-Gn-oyH" firstAttribute="centerX" secondItem="6Na-u5-pav" secondAttribute="centerX" id="os9-pW-cKW"/>
                             <constraint firstAttribute="bottom" secondItem="WOS-8H-sNY" secondAttribute="bottom" constant="34" id="pfE-Br-Q8P"/>
-                            <constraint firstItem="ySg-bw-Aa3" firstAttribute="centerY" secondItem="6Na-u5-pav" secondAttribute="centerY" id="qhy-3Z-dnM"/>
-                            <constraint firstItem="TUF-zp-AjS" firstAttribute="top" secondItem="v8p-Pa-Ewj" secondAttribute="top" constant="20" id="uOB-Ib-pqU"/>
+                            <constraint firstItem="TUF-zp-AjS" firstAttribute="top" secondItem="v8p-Pa-Ewj" secondAttribute="top" constant="50" id="uOB-Ib-pqU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="v8p-Pa-Ewj"/>
                     </view>
+                    <connections>
+                        <outlet property="proceedButton" destination="ySg-bw-Aa3" id="czk-1y-wib"/>
+                        <outlet property="quitButton" destination="0UZ-eo-RRk" id="6HC-8n-uPG"/>
+                        <outlet property="refreshButton" destination="VIF-Yf-mrg" id="Ild-YN-yst"/>
+                        <outlet property="sandboxStatus" destination="XiB-Gn-oyH" id="oM5-e9-JJZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CfU-mf-LUW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-362" y="2"/>
+            <point key="canvasLocation" x="-362.39999999999998" y="1.4778325123152709"/>
         </scene>
         <!--Install-->
         <scene sceneID="zvx-V0-lkH">

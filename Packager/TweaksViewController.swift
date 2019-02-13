@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 import ZIPFoundation
+import QuartzCore
 
 class TweaksViewController: UITableViewController, UITextFieldDelegate {
     
@@ -23,6 +24,13 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.textField.delegate = self
+        
+        textField.layer.borderWidth = 4/UIScreen.main.nativeScale
+        textField.layer.borderColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:0.5).cgColor // add white border to text field in the install tab for sleekness :)
+        textField.layer.cornerRadius = textField.frame.height / 2
+        
+//        outputLog.layer.borderWidth = 4/UIScreen.main.nativeScale
+//        outputLog.layer.borderColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:0.5).cgColor
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
