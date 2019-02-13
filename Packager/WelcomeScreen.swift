@@ -41,6 +41,8 @@ class WelcomeScreen: UIViewController {
             proceedButton.isHidden = true
             refreshButton.isHidden = false
             quitButton.isHidden = false
+            sandboxStatus.textColor = .red
+            sandboxStatus.alpha = 1
         }
     }
 }
