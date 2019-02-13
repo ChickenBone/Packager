@@ -24,6 +24,10 @@ class WelcomeScreen: UIViewController {
     @IBAction func refreshButtonPress(_ sender: Any) {
         self.viewDidAppear(true)
         self.viewDidLoad()
+        proceedButton.alpha = 0.0
+        ButtonRoundedCorners.animate(withDuration: 1.5, delay: 0.2, options: .curveEaseOut, animations: {
+            self.proceedButton.alpha = 1.0
+        })
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -37,6 +41,8 @@ class WelcomeScreen: UIViewController {
             refreshButton.isHidden = true
             proceedButton.isHidden = false
             sandboxStatus.text = "You're unsandboxed! Hit proceed."
+            sandboxStatus.textColor = .white
+            sandboxStatus.alpha = 1
         } else {
             proceedButton.isHidden = true
             refreshButton.isHidden = false
