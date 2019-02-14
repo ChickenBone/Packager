@@ -6,5 +6,6 @@ target 'Packager' do
   use_frameworks!
 
   # Pods for Packager
-    pod 'ZIPFoundation', '~> 0.9'
+  pod 'ZIPFoundation', '~> 0.9'
+  pod 'Digger'
 end

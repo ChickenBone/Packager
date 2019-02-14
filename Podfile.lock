@@ -1,16 +1,20 @@
 PODS:
+  - Digger (0.0.5)
   - ZIPFoundation (0.9.8)
 
 DEPENDENCIES:
+  - Digger
   - ZIPFoundation (~> 0.9)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Digger
     - ZIPFoundation
 
 SPEC CHECKSUMS:
+  Digger: c474bde76a91e0a36f12101c5dfe7e86774b15d3
   ZIPFoundation: b1f07e4409baf1641f3fe5948b2a1c3f5c500cb1
 
-PODFILE CHECKSUM: e6e73f731809c1fcc778d615f6a648c9a7bbcd71
+PODFILE CHECKSUM: ad89d92bf41e1c75682290aa0a04476552b391cb
 
 COCOAPODS: 1.6.0

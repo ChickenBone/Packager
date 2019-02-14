@@ -22,52 +22,31 @@ class HomeViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if(!isJailbroken()) {
-            let alert = UIAlertController(title: "Packager Error", message: "You are not jailbroken! or Packager is sandboxed, please unsandbox from iSuperSU.", preferredStyle: .alert)
+        super.viewDidAppear(animated)
 
-            let okAction = UIAlertAction(title: "Check Again", style: UIAlertAction.Style.default) {
-                UIAlertAction in
-                self.viewDidAppear(animated)
-            }
-            let cancelAction = UIAlertAction(title: "Close App", style: UIAlertAction.Style.cancel) {
-                UIAlertAction in
-                exit(0)
-            }
+        // Create a FileManager instance
+        let fileManager = FileManager.default
             
-            alert.addAction(okAction)
-            alert.addAction(cancelAction)
-            
-            self.present(alert, animated: true, completion: nil)
-        } else {
-            super.viewDidAppear(animated)
-
-            // Create a FileManager instance
-            let fileManager = FileManager.default
-            
-            // Get contents in the tweak directory
-            do {
-                let collectedFiles = try fileManager.contentsOfDirectory(atPath: "/var/containers/Bundle/tweaksupport/Library/MobileSubstrate/DynamicLibraries")
+        // Get contents in the tweak directory
+        do {
+            let collectedFiles = try fileManager.contentsOfDirectory(atPath: "/var/containers/Bundle/tweaksupport/Library/MobileSubstrate/DynamicLibraries")
                 
-                var dylibFiles = [""]
+            var dylibFiles = [""]
 
-                for file in collectedFiles {
-                    if file.hasSuffix(".dylib") {
-                        dylibFiles.append(String(file.dropLast(6)))
-                    }
+            for file in collectedFiles {
+                if file.hasSuffix(".dylib") {
+                    dylibFiles.append(String(file.dropLast(6)))
                 }
-                
-                dylibFiles.removeFirst()
-                
-                self.files = dylibFiles
-                
-                print(files)
-                
-                self.tableView.reloadData()
-            }
-            catch let error as NSError {
-                print("Ooops! Something went wrong: \(error)")
             }
             
+            // Remove the first entry because it is always ""
+            dylibFiles.removeFirst()
+                
+            self.files = dylibFiles
+            
+            self.tableView.reloadData()
+        } catch let error as NSError {
+            print("Ooops! Something went wrong: \(error)")
         }
     }
     

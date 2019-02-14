@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D445C73ADE9D85479D160C1EF2B79616"
-               BlueprintName = "ZIPFoundation"
+               BlueprintIdentifier = "2622C4545AF8DD50673EC89E71B5602C"
+               BlueprintName = "Digger"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "ZIPFoundation.framework">
+               BuildableName = "Digger.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

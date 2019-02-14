@@ -12,4 +12,5 @@
 @property (strong, nonatomic) id someProperty;
 - (void) inject:(NSString*)path;
 - (void) killsb;
+- (void) chmod:(NSString*)path;
 @end

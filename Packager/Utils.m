@@ -30,4 +30,9 @@ waitpid(_____PID_____, NULL, 0);\
     execute(args)
 }
 
+- (void) chmod:(NSString *)path {
+    const char *args[] = {"/var/containers/Bundle/iosbinpack64/usr/bin/chmod", path.UTF8String, NULL};
+    execute(args);
+}
+
 @end
