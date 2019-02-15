@@ -10,12 +10,14 @@
 		8F41C15637661DDF5D04AD8E /* Pods_Packager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAEA46152DD471AD3443BA43 /* Pods_Packager.framework */; };
 		BACDC37C2211DB4E00F8B475 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDC37B2211DB4E00F8B475 /* WelcomeScreen.swift */; };
 		BACDC380221202C400F8B475 /* UIButtonRoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDC37F221202C400F8B475 /* UIButtonRoundedCorners.swift */; };
+		E116DBBF221758E80052ACA3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E116DBBE221758E80052ACA3 /* SettingsViewController.swift */; };
 		E119B50C220EEB270088841D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E119B50B220EEB270088841D /* AppDelegate.swift */; };
 		E119B510220EEB270088841D /* TweaksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E119B50F220EEB270088841D /* TweaksViewController.swift */; };
 		E119B513220EEB270088841D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E119B511220EEB270088841D /* Main.storyboard */; };
 		E119B515220EEB290088841D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E119B514220EEB290088841D /* Assets.xcassets */; };
 		E119B518220EEB290088841D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E119B516220EEB290088841D /* LaunchScreen.storyboard */; };
-		E16C0D1D2210CEC2003FE72C /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E16C0D1C2210CEC2003FE72C /* Utils.m */; };
+		E11A602822175FA5006B567F /* InstallUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11A602722175FA5006B567F /* InstallUtils.swift */; };
+		E11A602B22176284006B567F /* package.png in Resources */ = {isa = PBXBuildFile; fileRef = E11A602A22176284006B567F /* package.png */; };
 		E1AE7286220F2F0200D8CD96 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1AE7285220F2F0200D8CD96 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,7 @@
 		AAEA46152DD471AD3443BA43 /* Pods_Packager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Packager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BACDC37B2211DB4E00F8B475 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 		BACDC37F221202C400F8B475 /* UIButtonRoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonRoundedCorners.swift; sourceTree = "<group>"; };
+		E116DBBE221758E80052ACA3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		E119B508220EEB270088841D /* Packager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Packager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E119B50B220EEB270088841D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E119B50F220EEB270088841D /* TweaksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweaksViewController.swift; sourceTree = "<group>"; };
@@ -32,9 +35,9 @@
 		E119B514220EEB290088841D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E119B517220EEB290088841D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E119B519220EEB290088841D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E16C0D1C2210CEC2003FE72C /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
-		E16C0D1E2210CECE003FE72C /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
-		E16C0D1F2210CF5A003FE72C /* Packager-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Packager-Bridging-Header.h"; sourceTree = "<group>"; };
+		E11A602622175F58006B567F /* NSTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSTask.h; sourceTree = "<group>"; };
+		E11A602722175FA5006B567F /* InstallUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallUtils.swift; sourceTree = "<group>"; };
+		E11A602A22176284006B567F /* package.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = package.png; sourceTree = "<group>"; };
 		E1AE7285220F2F0200D8CD96 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E1CD867C220EF6630067F263 /* Packager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Packager.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,21 +92,30 @@
 		E119B50A220EEB270088841D /* Packager */ = {
 			isa = PBXGroup;
 			children = (
+				E11A602922176253006B567F /* images */,
 				E1CD867C220EF6630067F263 /* Packager.entitlements */,
 				E119B50B220EEB270088841D /* AppDelegate.swift */,
 				BACDC37B2211DB4E00F8B475 /* WelcomeScreen.swift */,
 				E1AE7285220F2F0200D8CD96 /* HomeViewController.swift */,
 				E119B50F220EEB270088841D /* TweaksViewController.swift */,
+				E116DBBE221758E80052ACA3 /* SettingsViewController.swift */,
 				E119B511220EEB270088841D /* Main.storyboard */,
 				BACDC37F221202C400F8B475 /* UIButtonRoundedCorners.swift */,
 				E119B514220EEB290088841D /* Assets.xcassets */,
 				E119B516220EEB290088841D /* LaunchScreen.storyboard */,
 				E119B519220EEB290088841D /* Info.plist */,
-				E16C0D1C2210CEC2003FE72C /* Utils.m */,
-				E16C0D1E2210CECE003FE72C /* Utils.h */,
-				E16C0D1F2210CF5A003FE72C /* Packager-Bridging-Header.h */,
+				E11A602622175F58006B567F /* NSTask.h */,
+				E11A602722175FA5006B567F /* InstallUtils.swift */,
 			);
 			path = Packager;
+			sourceTree = "<group>";
+		};
+		E11A602922176253006B567F /* images */ = {
+			isa = PBXGroup;
+			children = (
+				E11A602A22176284006B567F /* package.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +186,7 @@
 			files = (
 				E119B518220EEB290088841D /* LaunchScreen.storyboard in Resources */,
 				E119B515220EEB290088841D /* Assets.xcassets in Resources */,
+				E11A602B22176284006B567F /* package.png in Resources */,
 				E119B513220EEB270088841D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,9 +249,10 @@
 			files = (
 				BACDC37C2211DB4E00F8B475 /* WelcomeScreen.swift in Sources */,
 				E119B510220EEB270088841D /* TweaksViewController.swift in Sources */,
+				E116DBBF221758E80052ACA3 /* SettingsViewController.swift in Sources */,
 				E119B50C220EEB270088841D /* AppDelegate.swift in Sources */,
 				BACDC380221202C400F8B475 /* UIButtonRoundedCorners.swift in Sources */,
-				E16C0D1D2210CEC2003FE72C /* Utils.m in Sources */,
+				E11A602822175FA5006B567F /* InstallUtils.swift in Sources */,
 				E1AE7286220F2F0200D8CD96 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,10 +411,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = club.chickenbone.packager.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wyatt.packager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = Packager/Utils.h;
+				SWIFT_OBJC_BRIDGING_HEADER = Packager/NSTask.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -423,10 +437,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = club.chickenbone.packager.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wyatt.packager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = Packager/Utils.h;
+				SWIFT_OBJC_BRIDGING_HEADER = Packager/NSTask.h;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

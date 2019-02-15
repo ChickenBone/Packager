@@ -106,31 +106,34 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
         var DynamicLibs = [URL(string: "")]
         do{
         let mobileSubstrateDynamicLibs = try self.fm.contentsOfDirectory(at: URL(fileURLWithPath: "/var/containers/Bundle/tweaksupport/Library/packagertemp/"+type+"/MobileSubstrate/DynamicLibraries/"), includingPropertiesForKeys: nil, options: FileManager.DirectoryEnumerationOptions.skipsHiddenFiles)
+            
             DynamicLibs.removeFirst()
+            
         for file in mobileSubstrateDynamicLibs {
             DynamicLibs.append(file.absoluteURL)
         }
         for file in DynamicLibs {
             self.log(message: "[i] Found files in Mobile Substrate: \n [i] " + (file?.absoluteString)!)
         }
+            
         }catch{
             self.log(message: "[i] No files in DynamicLibs")
             self.showInstallError(error: "No Dynamic Libs Found!")
-
             return DynamicLibs
         }
+        
         return DynamicLibs
     }
     func injectFiles(tweakDylib: URL, preferenceBundle: URL) {
         let installUtils = InstallUtils.init()
         self.log(message: "[i] Injecting TweakDylib...")
-        installUtils.inject(tweakDylib.absoluteString)
+        installUtils.inject(path: tweakDylib.absoluteString)
         self.log(message: "[i] Injected TweakDylib!")
         self.log(message: "[i] Injecting PreferenceBundle...")
-        installUtils.inject(preferenceBundle.absoluteString)
+        installUtils.inject(path: preferenceBundle.absoluteString)
         self.log(message: "[i] Injected PreferenceBundle!")
         self.log(message: "[i] Giving permissions to PreferenceBundle!")
-        installUtils.chmod(preferenceBundle.absoluteString)
+        installUtils.chmod(path: preferenceBundle.absoluteString)
         self.log(message: "[i] Cleaning up...")
         self.cleanUp()
         self.showSuccessMessage()
@@ -287,7 +290,7 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
         let alert2 = UIAlertController(title: "Packager", message: "Your tweak was installed!", preferredStyle: .alert)
         let action = UIAlertAction(title: "Respring", style: UIAlertAction.Style.default) {
             UIAlertAction in
-            InstallUtils.init().killsb()
+            InstallUtils.init().respring()
         }
         let action2 = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default) {
             UIAlertAction in
@@ -297,4 +300,5 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
         alert2.addAction(action2)
         self.present(alert2, animated: true, completion: nil)
     }
-}
+ }
+
