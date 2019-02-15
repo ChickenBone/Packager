@@ -274,15 +274,15 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
         if(self.fm.fileExists(atPath: path)){
             if(self.fm.fileExists(atPath: path+"Library/")){
                 self.log(message: "[i] Library method found begining install")
-                  self.installTweak(url: URL(fileURLWithPath: path), method: "libraryFirst")
+                  self.installTweak(tweakname: filename, method: "libraryFirst")
             }
             else if(self.fm.fileExists(atPath: path+filename+"/Library/") || self.fm.fileExists(atPath: path+filename+"/LIB/")){
                 self.log(message: "[i] Tweak Name method found begining install")
-              self.installTweak(url: URL(fileURLWithPath: path), method: "tweakNameFirst")
+              self.installTweak(tweakname: filename, method: "tweakNameFirst")
             }
             else if(self.fm.fileExists(atPath: path+"/var/Library/") || self.fm.fileExists(atPath: "/var/LIB/")){
                 self.log(message: "[i] Var method found begining install")
-                self.installTweak(url: URL(fileURLWithPath: path), method: "varFirst")
+                self.installTweak(tweakname: filename, method: "varFirst")
             }else{
                 self.log(message: "[!] Tweak is not formatted correctly!")
                 self.showInstallError(error: "The tweak you provided is not supported by Packager.")
@@ -292,15 +292,16 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
     }
 }
 // END OF WHAT I DID
-    func installTweak(url: URL, method: String) {
+    func installTweak(tweakname: String, method: String) {
         if(method == "libraryFirst") {
 //BEGINING OF WHAT I DID
             // Gets Dynamic Library Files using the /var/containers/Bundle/tweaksupport/Library/packagertemp/"+TYPE+"/MobileSubstrate/DynamicLibraries/ where TYPE is Library
-            let dLF = self.getDynLibs(type: "Library")
+            let type = "Library"
+            let dLF = self.getDynLibs(type: type)
             // Same thing here
-            let pLF = self.getPrefLoader(type: "Library")
+            let pLF = self.getPrefLoader(type: type)
             // WOW
-            let pBF = self.getPrefBun(type: "Library")
+            let pBF = self.getPrefBun(type: type)
             // Message
             self.log(message: "[i] Found required files, moving files...")
             // Moves the files gathered
@@ -313,16 +314,36 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
             //Method Name
             // zipfile.zip/Library/...
         } else if(method == "tweakNameFirst") {
+//BEGINING OF WHAT I DID
+            // WOW LOOK its adaptable
+            let type = tweakname+"/Library"
+            let dLF = self.getDynLibs(type: type)
+            let pLF = self.getPrefLoader(type: type)
+            let pBF = self.getPrefBun(type: type)
+            self.log(message: "[i] Found required files, moving files...")
+            self.moveFiles(msDL: dLF, pLF: pLF, pBF: pBF)
+            self.log(message: "Files Moved!")
+            self.showInstallError(error: "Files MOVED!!!!")
+// END OF WHAT I DID
             // Zip File Format:
             // zipfile.zip/TweakName/Library/...
             // Also check for:
             // Zip File Format:
             // zipfile.zip/TweakName/var/LIB/...
         } else if(method == "varFirst") {
+
+//BEGINING OF WHAT I DID
+            // WOW LOOK its adaptable
+            let type = "var/Library"
+            let dLF = self.getDynLibs(type: type)
+            let pLF = self.getPrefLoader(type: type)
+            let pBF = self.getPrefBun(type: type)
+            self.log(message: "[i] Found required files, moving files...")
+            self.moveFiles(msDL: dLF, pLF: pLF, pBF: pBF)
+            self.log(message: "Files Moved!")
+            self.showInstallError(error: "Files MOVED!!!!")
+// END OF WHAT I DID
             // Zip File Format:
-            self.log(message: "[!] Tweak Installed!\n")
-            self.showInstallError(error: "Tweak Installed!")
-            self.downloadButton.isEnabled = true
             // zipfile.zip/var/LIB
         } else {
             // The ZIP is either a random one or not formatted correctly.
