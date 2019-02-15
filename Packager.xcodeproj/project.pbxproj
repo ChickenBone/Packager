@@ -390,14 +390,14 @@
 				CODE_SIGN_ENTITLEMENTS = Packager/Packager.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 469MLTNL8A;
+				DEVELOPMENT_TEAM = 89ZC2KMMLX;
 				INFOPLIST_FILE = Packager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = club.conorthedev.packager.app;
+				PRODUCT_BUNDLE_IDENTIFIER = club.chickenbone.packager.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = Packager/Utils.h;
@@ -416,14 +416,14 @@
 				CODE_SIGN_ENTITLEMENTS = Packager/Packager.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 469MLTNL8A;
+				DEVELOPMENT_TEAM = 89ZC2KMMLX;
 				INFOPLIST_FILE = Packager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = club.conorthedev.packager.app;
+				PRODUCT_BUNDLE_IDENTIFIER = club.chickenbone.packager.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = Packager/Utils.h;

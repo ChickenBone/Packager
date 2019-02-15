@@ -6,11 +6,11 @@
 //  Copyright © 2019 Conor Byrne. All rights reserved.
 //
 
-import UIKit
-import Foundation
-import ZIPFoundation
-import QuartzCore
-import Digger
+import UIKit;
+import Foundation;
+import QuartzCore;
+import ZIPFoundation;
+import Digger;
 
 class TweaksViewController: UITableViewController, UITextFieldDelegate {
     
@@ -44,7 +44,119 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-    
+//BEGINING OF WHAT I DID, you can delete from here to the end
+    func moveFiles(msDL: [URL?], pLF: [URL?], pBF: [URL?] ){
+        //Just a direct theft of what you made conor from the old moving files and it works lmao
+        for url in msDL {
+            let path = URL(fileURLWithPath: "/var/containers/Bundle/tweaksupport/Library/MobileSubstrate/DynamicLibraries/" + url!.lastPathComponent)
+            
+            self.log(message: "File URL:" + url!.absoluteString)
+            self.log(message: "Destination URL:" +  path.absoluteString)
+            do{
+            try self.fm.moveItem(at: url!, to: path)
+        }catch{
+            self.log(message: "Error in moveing files")
+        }
+        }
+        
+        self.log(message: "Moved mobileSubstrateDynamicLibs...")
+        
+        for url in pLF {
+            let path = URL(fileURLWithPath: "/var/containers/Bundle/tweaksupport/Library/PreferenceLoader/Preferences/" + url!.lastPathComponent)
+            
+            self.log(message: "File URL:" + url!.absoluteString)
+            self.log(message: "Destination URL:" + path.absoluteString)
+            do{
+            try self.fm.moveItem(at: url!, to: path)
+        }catch{
+            self.log(message: "Error in moveing files")
+        }
+        }
+        
+        self.log(message: "Moved preferenceLoaderFiles...")
+        
+        for url in pBF {
+            let path = URL(fileURLWithPath: "/var/containers/Bundle/tweaksupport/Library/PreferenceBundles/" + url!.lastPathComponent)
+            
+            self.log(message: "File URL:" + url!.absoluteString)
+            self.log(message: "Destination URL:" + path.absoluteString)
+            do{
+            try self.fm.moveItem(at: url!, to: path)
+            }catch{
+                self.log(message: "Error in moveing files")
+            }
+        }
+    }
+    func getPrefLoader(type: String)->[URL?]{
+        // A theft and adaptation to a seperate function, currently only gets one file and IDK why
+        var PreferenceFiles = [URL(string: "")]
+            do{
+        let preferenceLoaderFiles = try self.fm.contentsOfDirectory(at: URL(fileURLWithPath: "/var/containers/Bundle/tweaksupport/Library/packagertemp/"+type+"/PreferenceLoader/Preferences/"), includingPropertiesForKeys: nil, options: FileManager.DirectoryEnumerationOptions.skipsHiddenFiles)
+        
+        PreferenceFiles.removeFirst()
+        
+        for file in preferenceLoaderFiles {
+            if(file.absoluteString.hasSuffix(".bundle")) {
+                PreferenceFiles.append(file.absoluteURL)
+            }
+        }
+        
+        for file in preferenceLoaderFiles {
+            self.log(message: "[i] Found files in PreferenceLoader: \n [i] " + file.absoluteString)
+        }
+            }catch{
+                return PreferenceFiles
+                
+                
+        }
+        return PreferenceFiles
+    }
+    func getPrefBun(type: String)->[URL?]{
+        // A theft and adaptation to a seperate function, Works beautifully
+
+        var PrefBundles = [URL(string: "")]
+
+        do{
+        let preferenceBundleFiles = try self.fm.contentsOfDirectory(at: URL(fileURLWithPath: "/var/containers/Bundle/tweaksupport/Library/packagertemp/"+type+"/PreferenceBundles/"), includingPropertiesForKeys: nil, options: FileManager.DirectoryEnumerationOptions.skipsHiddenFiles)
+        
+        for file in preferenceBundleFiles {
+            PrefBundles.removeFirst()
+            PrefBundles.append(file.absoluteURL)
+        }
+        
+        for file in PrefBundles {
+            self.log(message: "[i] Found files in PreferanceBundles: \n [i] " + file!.absoluteString)
+        }
+        }catch{
+            return PrefBundles
+
+        }
+        return PrefBundles
+
+    }
+    func getDynLibs(type: String)->[URL?]{
+        // A theft and adaptation to a seperate function, currently only gets one file and IDK why
+
+        var DynamicLibs = [URL(string: "")]
+        do{
+        let mobileSubstrateDynamicLibs = try self.fm.contentsOfDirectory(at: URL(fileURLWithPath: "/var/containers/Bundle/tweaksupport/Library/packagertemp/"+type+"/MobileSubstrate/DynamicLibraries/"), includingPropertiesForKeys: nil, options: FileManager.DirectoryEnumerationOptions.skipsHiddenFiles)
+        for file in mobileSubstrateDynamicLibs {
+            DynamicLibs.removeFirst()
+            DynamicLibs.append(file.absoluteURL)
+        }
+        
+        for file in DynamicLibs {
+            self.log(message: "[i] Found files in Mobile Substrate: \n [i] " + (file?.absoluteString)!)
+        }
+        }catch{
+            return DynamicLibs
+            
+            
+        }
+        return DynamicLibs
+
+    }
+// END OF WHAT I DID, delete to here ( if you want to go back )
     func injectFiles(tweakDylib: URL, preferenceBundle: URL) {
         let installUtils = InstallUtils.init()
         
@@ -62,9 +174,9 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
         installUtils.chmod(preferenceBundle.absoluteString)
         
         self.log(message: "[i] Cleaning up...")
-        
+        // We need to remove this just in case there is more than one DYNLIB or PREFBUNDLE so we can run this in a for loop
         self.cleanUp()
-        
+        // Same here we can call this seperatly
         self.showSuccessMessage()
     }
     
@@ -117,18 +229,23 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
                                 self.log(message: "[d] Final File Name = " + finalFileName)
                                 self.log(message: "[d] Download Path = " + url.absoluteString)
                                 self.log(message: "[d] Does Temporary Directory Exist = " + String(self.fm.fileExists(atPath: "/var/containers/Bundle/tweaksupport/Library/packagertemp/")))
-                                self.log(message: "[d] Does File Downloaded URL Exist = " + String(self.fm.fileExists(atPath: url.absoluteString)))
+                                // Fixes the problem you told me to fix
+                                let tempfile = url.absoluteString.replacingOccurrences(of: "file://", with: "")
 
-                                try self.fm.copyItem(at: URL(fileURLWithPath: url.absoluteString), to: URL(fileURLWithPath: downloadPath))
+                                self.log(message: "[d] Does File Downloaded URL Exist = " + String(self.fm.fileExists(atPath: tempfile)))
+
+                                try self.fm.copyItem(at: URL(fileURLWithPath: tempfile), to: URL(fileURLWithPath: downloadPath))
                                 try self.fm.unzipItem(at: URL(fileURLWithPath: downloadPath), to: URL(fileURLWithPath: downloadDirectory))
+                                self.getMethod(url: URL(fileURLWithPath: downloadPath)) // Gets method and installs Tweak one big spicy function
                             } catch let error{
                                 self.log(message: error.localizedDescription)
                                 self.showInstallError(error: error.localizedDescription)
                                 self.downloadButton.isEnabled = true
+                                self.progressBar.progress = 0
                             }
                         
                             self.log(message: "[i] Unzipped!")
-                        
+
                         case .failure(let error):
                             self.log(message: "[!] Failed to download!\n[!] Error:\n[!] " + error.localizedDescription)
                             self.showInstallError(error: "Failed to download file! " + error.localizedDescription)
@@ -146,20 +263,66 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
             self.showInstallError(error: "The URL you entered is invalid")
         }
     }
-    
+//BEGINING OF WHAT I DID  ( Please keep it, it'll make the API and non-user provided URL installation MUCH easier )
+    func getMethod(url: URL){
+        // This func allows for easy installation once we impliment the API we can just do getMethod( local file name ) then it will install
+        // All we need todo is make a method that downloads and unzips the files then we can truly just do justInstall( webURL ) and wow that would be cool
+        // Honestly This works the best it can and it is the most efficiant it can be so I would stick with it
+        let filename = url.lastPathComponent.replacingOccurrences(of: ".zip", with: "")
+        let path = "/var/containers/Bundle/tweaksupport/Library/packagertemp/"
+        do{
+        if(self.fm.fileExists(atPath: path)){
+            if(self.fm.fileExists(atPath: path+"Library/")){
+                self.log(message: "[i] Library method found begining install")
+                  self.installTweak(url: URL(fileURLWithPath: path), method: "libraryFirst")
+            }
+            else if(self.fm.fileExists(atPath: path+filename+"/Library/") || self.fm.fileExists(atPath: path+filename+"/LIB/")){
+                self.log(message: "[i] Tweak Name method found begining install")
+              self.installTweak(url: URL(fileURLWithPath: path), method: "tweakNameFirst")
+            }
+            else if(self.fm.fileExists(atPath: path+"/var/Library/") || self.fm.fileExists(atPath: "/var/LIB/")){
+                self.log(message: "[i] Var method found begining install")
+                self.installTweak(url: URL(fileURLWithPath: path), method: "varFirst")
+            }else{
+                self.log(message: "[!] Tweak is not formatted correctly!")
+                self.showInstallError(error: "The tweak you provided is not supported by Packager.")
+                self.downloadButton.isEnabled = true
+            }
+        }
+    }
+}
+// END OF WHAT I DID
     func installTweak(url: URL, method: String) {
         if(method == "libraryFirst") {
-            // Zip File Format:
+//BEGINING OF WHAT I DID
+            // Gets Dynamic Library Files using the /var/containers/Bundle/tweaksupport/Library/packagertemp/"+TYPE+"/MobileSubstrate/DynamicLibraries/ where TYPE is Library
+            let dLF = self.getDynLibs(type: "Library")
+            // Same thing here
+            let pLF = self.getPrefLoader(type: "Library")
+            // WOW
+            let pBF = self.getPrefBun(type: "Library")
+            // Message
+            self.log(message: "[i] Found required files, moving files...")
+            // Moves the files gathered
+            self.moveFiles(msDL: dLF, pLF: pLF, pBF: pBF)
+            // Self explanitory
+            self.log(message: "Files Moved!")
+            // Holy shit it works
+            self.showInstallError(error: "Files MOVED!!!!")
+// END OF WHAT I DID
+            //Method Name
             // zipfile.zip/Library/...
         } else if(method == "tweakNameFirst") {
             // Zip File Format:
             // zipfile.zip/TweakName/Library/...
-            
             // Also check for:
             // Zip File Format:
             // zipfile.zip/TweakName/var/LIB/...
         } else if(method == "varFirst") {
             // Zip File Format:
+            self.log(message: "[!] Tweak Installed!\n")
+            self.showInstallError(error: "Tweak Installed!")
+            self.downloadButton.isEnabled = true
             // zipfile.zip/var/LIB
         } else {
             // The ZIP is either a random one or not formatted correctly.
