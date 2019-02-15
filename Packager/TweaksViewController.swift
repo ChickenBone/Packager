@@ -140,6 +140,7 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
         var DynamicLibs = [URL(string: "")]
         do{
         let mobileSubstrateDynamicLibs = try self.fm.contentsOfDirectory(at: URL(fileURLWithPath: "/var/containers/Bundle/tweaksupport/Library/packagertemp/"+type+"/MobileSubstrate/DynamicLibraries/"), includingPropertiesForKeys: nil, options: FileManager.DirectoryEnumerationOptions.skipsHiddenFiles)
+            
         for file in mobileSubstrateDynamicLibs {
             DynamicLibs.removeFirst()
             DynamicLibs.append(file.absoluteURL)
@@ -161,17 +162,17 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
         let installUtils = InstallUtils.init()
         
         self.log(message: "[i] Injecting TweakDylib...")
-        installUtils.inject(tweakDylib.absoluteString)
+        installUtils.inject(path: tweakDylib.absoluteString)
         
         self.log(message: "[i] Injected TweakDylib!")
         self.log(message: "[i] Injecting PreferenceBundle...")
 
-        installUtils.inject(preferenceBundle.absoluteString)
+        installUtils.inject(path: preferenceBundle.absoluteString)
         
         self.log(message: "[i] Injected PreferenceBundle!")
         self.log(message: "[i] Giving permissions to PreferenceBundle!")
         
-        installUtils.chmod(preferenceBundle.absoluteString)
+        installUtils.chmod(path: preferenceBundle.absoluteString)
         
         self.log(message: "[i] Cleaning up...")
         // We need to remove this just in case there is more than one DYNLIB or PREFBUNDLE so we can run this in a for loop
@@ -394,7 +395,7 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
         
         let action = UIAlertAction(title: "Respring", style: UIAlertAction.Style.default) {
             UIAlertAction in
-            InstallUtils.init().killsb()
+            InstallUtils.init().respring()
         }
         
         let action2 = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default) {
