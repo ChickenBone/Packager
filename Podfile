@@ -8,4 +8,5 @@ target 'Packager' do
   # Pods for Packager
   pod 'ZIPFoundation', '~> 0.9'
   pod 'Digger'
+  pod 'Alamofire', '~> 5.0.0-beta.2'
 end
