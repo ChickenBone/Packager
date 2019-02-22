@@ -12,16 +12,21 @@ import QuartzCore;
 import ZIPFoundation;
 import Digger;
 
-class TweaksViewController: UITableViewController, UITextFieldDelegate {
+class TweaksViewController:UIViewController {
     private var downloadTask: URLSessionDownloadTask?
     private let fm = FileManager.default
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var downloadButton: UIButton!
     @IBOutlet weak var outputLog: UITextView!
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.textField.delegate = self
+        
         
         textField.layer.borderWidth = 3/UIScreen.main.nativeScale
         textField.layer.borderColor = UIColor(red:1.00, green:1.00, blue:1.00, alpha:0.2).cgColor
@@ -40,7 +45,7 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
             do{
             try self.fm.moveItem(at: url!, to: path)
         }catch{
-            self.log(message: "[!] Error in moveing files")
+            self.log(message: "[!] Error in moving files")
             self.showInstallError(error: "[!] Could Not Move Dynamic Library Files")
             return;
         }
@@ -172,9 +177,9 @@ class TweaksViewController: UITableViewController, UITextFieldDelegate {
     @IBAction func startDownload(_ sender: Any) {
         let url = textField.text ?? ""
         downloadButton.isEnabled = false
-        outputLog.text = ""
+        outputLog.text = "yeet"
         if(url != "") {
-            
+            mainMethod(url: url)
         } else {
             self.log(message: "[!] Tweak URL is Invalid!")
             self.showInstallError(error: "The URL you entered is invalid")

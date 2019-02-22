@@ -6,4 +6,19 @@
 //  Copyright © 2019 Conor Byrne. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+
+
+
+class TweaksTestViewController: UIViewController {
+
+    let arrayOfColors: [Int] = [1, 2, 3]
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+ 
+    
+    
+}
